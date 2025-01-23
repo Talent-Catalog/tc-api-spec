@@ -1,7 +1,7 @@
 type: object
 description: Represents a Candidate with detailed properties and relationships.
 properties:
-  uuid:
+  publicId:
     type: string
     format: uuid
     description: Universally unique identifier for the candidate
@@ -356,10 +356,10 @@ properties:
     description: Indicates whether the candidate's partner is registered.
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
-  partnerCandidateId:
+  partnerCandidatePublicId:
     type: string
     format: uuid
-    description: ID of the candidate's partner (if also a candidate in the system)
+    description: Anonymised ID of the candidate's partner (if also a candidate in the system)
     example: 123e4567-e89b-12d3-a456-426614174000
   partnerCitizenship:
     type: array

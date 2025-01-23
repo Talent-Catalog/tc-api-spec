@@ -8,7 +8,7 @@ get:
     - name: candidateId
       in: path
       required: true
-      description: Unique ID of the candidate to retrieve
+      description: Unique public ID of the candidate to retrieve
       schema:
         type: string
         format: uuid
