@@ -1,11 +1,11 @@
 get:
-  summary: Retrieve an anonymised candidate by candidate ID
-  description: Fetches details of an anonymised candidate by their unique candidate ID.
+  summary: Retrieve an anonymised candidate by candidate public ID
+  description: Fetches details of an anonymised candidate by their unique public candidate ID.
   tags:
     - Candidates
-  operationId: getCandidateById
+  operationId: getCandidateByPublicId
   parameters:
-    - name: candidateId
+    - name: publicId
       in: path
       required: true
       description: Unique public ID of the candidate to retrieve

@@ -28,8 +28,8 @@ servers:
 paths:
   /v1/candidates:
     $ref: paths/v1/candidates.yaml
-  /v1/candidates/{candidateId}:
-    $ref: ./paths/v1/candidates-candidateId.yaml
+  /v1/candidates/{publicId}:
+    $ref: ./paths/v1/candidates-publicId.yaml
   /v1/candidates/byListId/{listId}: # todo - replace with /v1/lists/{listId}/candidates
     $ref: ./paths/v1/candidates-byListId-listId.yaml
   /v1/candidates/bySearchId/{searchId}: # todo - replace with /v1/searches/{searchId}/candidates
