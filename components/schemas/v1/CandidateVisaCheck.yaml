@@ -18,7 +18,8 @@ properties:
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   characterAssessment:
-    description: Meets character assessment for the visa. 
+    description: Meets character assessment for the visa.
+    allOf:
       - $ref: ../common/enums/yes_no.yaml
   securityRisk:
     description: Meets security risk assessment for the visa.
