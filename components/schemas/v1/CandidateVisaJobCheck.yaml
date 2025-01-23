@@ -1,63 +1,62 @@
 type: object
-description: A job check related to a candidate's visa status. # todo - confirm this description for accuracy.
+description: A job check related to a candidate's visa for a destination.
 properties:
   jobOpp:
-    description: The job opportunity associated with the visa check. # todo - confirm this description for accuracy.
+    description: The job opportunity that's located in same destination associated with the visa check.
     allOf:
       - $ref: ./JobOpportunity.yaml
   interest:
-    description: The candidate's interest in the job opportunity. # todo - confirm this description for accuracy.
+    description: The candidate has genuine interest and desire to relocate for the job opportunity.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   qualification:
-    description: The candidate's qualification for the job opportunity. # todo - confirm this description for accuracy.
+    description: The candidate has relevant qualification for the job opportunity.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   occupation:
-    description: The occupation for the job opportunity. # todo - confirm this description for accuracy.
+    description: The occupation for the job opportunity.
     allOf:
       - $ref: ./Occupation.yaml
   salaryTsmit:
-    description: The salary for the job opportunity meets the TSMIT threshold. # todo - confirm this description for accuracy - https://www.homeaffairs.gov.au/reports-and-pubs/files/tsmit_review_report.pdf ?
+    description: The salary for the job opportunity meets the TSMIT threshold (Australia visa check ONLY), see 'https://www.homeaffairs.gov.au/reports-and-pubs/files/tsmit_review_report.pdf'
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   regional:
-    description: The job opportunity is in a regional area. # todo - confirm this description for accuracy.
+    description: The job opportunity is in a regional area.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   eligible_494:
-    description: The candidate is eligible for the 494 visa. # todo - confirm this description for accuracy.
+    description: The candidate is eligible for the 494 visa (Australia visa check ONLY).
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   eligible_186:
-    description: The candidate is eligible for the 186 visa. # todo - confirm this description for accuracy.
+    description: The candidate is eligible for the 186 visa.(Australia visa check ONLY)
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   eligibleOther:
-    description: The candidate is eligible for another visa. # todo - confirm this description for accuracy.
+    description: The candidate is eligible for another visa (Australia visa check ONLY).
     allOf:
       - $ref: ../common/enums/other_visas.yaml
   putForward:
-    description: The candidate has been put forward for the job opportunity. # todo - confirm this description for accuracy.
+    description: The candidate has been put forward for the job opportunity.
     allOf:
       - $ref: ../common/enums/visa_eligibility.yaml
   tcEligibility:
-    description: The candidate is eligible for the TBB program. # todo - confirm this description for accuracy - NB: @caroline this field is still named tbbEligibility in the TC entity; there's a separate issue to rename that.
+    description: The candidate is eligible for the Talent Catalog.
     allOf:
       - $ref: ../common/enums/TBB_eligibility_assessment.yaml
-  ageRequirement: # todo - sm - does this need to be a string? Can it be an enum? If enum, thn leave it, otherwise remove from API
-#    todo jc+sm:  @caroline - can you confirm if this needs to be a string - can it be an enum?
+  ageRequirement:
     type: string
-    description: The candidate meets the age requirement for the job opportunity. # todo - confirm this description for accuracy.
+    description: The candidate meets the age requirement for the job opportunity.
     example: "Yes"
   languagesRequired:
     type: array
-    description: An array of language IDs denoting the languages required for the job opportunity. # todo - confirm this description for accuracy.
+    description: An array of language IDs denoting the languages required for the job opportunity.
     items:
       type: integer
       format: int64
     example: [1, 2]
   languagesThresholdMet:
-    description: The candidate meets the language threshold for the job opportunity. # todo - confirm this description for accuracy.
+    description: The candidate meets the language threshold for the job opportunity.
     allOf:
       - $ref: ../common/enums/yes_no.yaml

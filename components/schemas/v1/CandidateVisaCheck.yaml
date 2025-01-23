@@ -2,49 +2,48 @@ type: object
 description: A check of a candidate's visa status.
 properties:
   country:
-    description: The country of the visa. # todo - confirm this description for accuracy.
+    description: The country of the visa.
     allOf:
       - $ref: ./Country.yaml
   protection:
-    description: The protection status of the visa. # todo - confirm this description for accuracy.
+    description: Meets international protection assessment.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   englishThreshold:
-    description: Meets the English language threshold for the visa. # todo - confirm this description for accuracy.
+    description: Meets the English language threshold for the visa.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   healthAssessment:
-    description: The health assessment status for the visa. # todo - confirm this description for accuracy.
+    description: Meets health assessment for the visa.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   characterAssessment:
-    description: The character assessment status for the visa. # todo - confirm this description for accuracy.
-    allOf:
+    description: Meets character assessment for the visa. 
       - $ref: ../common/enums/yes_no.yaml
   securityRisk:
-    description: The security risk status for the visa. # todo - confirm this description for accuracy.
+    description: Meets security risk assessment for the visa.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
     example: "No"
   overallRisk:
-    description: The overall risk assessment status for the visa. # todo - confirm this description for accuracy.
+    description: The overall risk assessment status for the visa.
     allOf:
       - $ref: ../common/enums/risk_level.yaml
   validTravelDocs:
-    description: The validity status of the candidate's travel documents. # todo - confirm this description for accuracy.
+    description: The validity status of the candidate's travel document (if exists).
     allOf:
       - $ref: ../common/enums/document_status.yaml
   pathwayAssessment:
-    description: The pathway assessment status for the visa. # todo - confirm this description for accuracy.
+    description: Meets pathway assessment for the visa.
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
   destinationFamily:
-    description: The status of the candidate's family in the destination country. # todo - confirm this description for accuracy.
+    description: The closest relative of the candidate in the destination country (if exists).
     allOf:
       - $ref: ../common/enums/family_relations.yaml
     example: "Sibling"
   candidateVisaJobChecks:
     type: array
-    description: The job checks for the candidate's visa. # todo - confirm this description for accuracy.
+    description: The job checks for the candidate's visa.
     items:
       $ref: ./CandidateVisaJobCheck.yaml
