@@ -152,5 +152,16 @@ allOf:
         description: Link to the corresponding candidate's video profile.
         example: "https://drive.google.com/video/12345678"
 
+      # The below fields use the TC raw data field names but are mapped to public API field names
+      # For example contactConsentPartners is mapped to contactConsentTcPartners in the public API model
+      # These fields will eventually be renamed in the TC database and service to match the public API model
+      # The below fields are thus temporary and will be removed  once the TC database and service fields are renamed
+      # See: Issue #todo
+      contactConsentPartners:
+        type: boolean
+        description: Indicates whether the candidate has given consent to be contacted by partners.
+        example: true
+
+
     required:
       - candidateNumber

@@ -127,7 +127,7 @@ properties:
     type: string
     description: Notes related to the candidate's conflict participation.
     example: "Conflict participation notes"
-  contactConsentPartners:
+  contactConsentTcPartners:
     type: boolean
     description: Indicates whether the candidate has given consent to be contacted by partners.
     example: true
