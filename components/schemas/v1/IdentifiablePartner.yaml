@@ -1,0 +1,15 @@
+type: object
+properties:
+  id:
+    type: string
+    description: Unique Talent Catalog identifier for the candidate's partner.
+    example: 1234567
+  candidateNumber:
+    type: string
+    description: Unique candidate number for the candidate's partner.
+    example: "12345678"
+  publicId:
+    type: string
+    format: uuid
+    description: Anonymised public ID of the candidate's partner
+    example: 123e4567-e89b-12d3-a456-426614174000

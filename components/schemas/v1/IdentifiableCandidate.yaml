@@ -35,6 +35,10 @@ allOf:
         type: string
         description: Candidate's address line 1.
         example: "123 Main St"
+      partnerCandidate:
+        description: The candidate's partner (if also a candidate in the system)
+        allOf:
+          - $ref: './IdentifiablePartner.yaml'
       regoIp:
         type: string
         description: IP address of the candidate during registration.
