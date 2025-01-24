@@ -129,7 +129,7 @@ properties:
     example: "Conflict participation notes"
   contactConsentTcPartners:
     type: boolean
-    description: Indicates whether the candidate has given consent to be contacted by partners.
+    description: Indicates whether the candidate has given consent to be contacted by TC partners.
     example: true
   contactConsentRegistration:
     type: boolean
@@ -372,10 +372,6 @@ properties:
     description: Education level of the candidate's partner.
     allOf:
       - $ref: ./EducationLevel.yaml
-  partnerEduLevelNotes:
-    type: string
-    description: Notes related to the education level of the candidate's partner.
-    example: "Partner education level notes"
   partnerEnglish:
     description: Indicates whether the candidate's partner speaks English.
     allOf:
@@ -401,10 +397,6 @@ properties:
     description: Occupation of the candidate's partner.
     allOf:
       - $ref: ./Occupation.yaml
-  partnerOccupationNotes:
-    type: string
-    description: Notes related to the occupation of the candidate's partner.
-    example: "Partner occupation notes"
   residenceStatus:
     description: Residence status of the candidate.
     allOf:
