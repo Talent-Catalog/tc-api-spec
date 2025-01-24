@@ -159,7 +159,7 @@ allOf:
       # See: Issue #todo
       contactConsentPartners:
         type: boolean
-        description: Indicates whether the candidate has given consent to be contacted by partners.
+        description: Indicates whether the candidate has given consent to be contacted by TC partners.
         example: true
 
 
