@@ -356,10 +356,10 @@ properties:
     description: Indicates whether the candidate's partner is registered.
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
-  partnerCandidatePublicId:
+  partnerPublicId:
     type: string
     format: uuid
-    description: Anonymised ID of the candidate's partner (if also a candidate in the system)
+    description: Anonymised public ID of the candidate's partner (if also a candidate in the system)
     example: 123e4567-e89b-12d3-a456-426614174000
   partnerCitizenship:
     type: array
