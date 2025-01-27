@@ -44,7 +44,7 @@ properties:
   tcEligibility:
     description: The candidate is eligible for the Talent Catalog.
     allOf:
-      - $ref: ../common/enums/TBB_eligibility_assessment.yaml
+      - $ref: ../common/enums/tc_eligibility_assessment.yaml
   ageRequirement:
     type: string
     description: The candidate meets the age requirement for the job opportunity.
