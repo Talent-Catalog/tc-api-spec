@@ -22,6 +22,10 @@ get:
             $ref: ../../components/schemas/v1/Candidate.yaml
     '404':
       description: Not found - Candidate not found
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/NotFoundError.yaml
     '400':
       description: Bad request - Invalid candidate ID
     '500':
