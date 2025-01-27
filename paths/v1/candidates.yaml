@@ -1,6 +1,6 @@
 get:
   summary: Retrieve a page of anonymised candidates
-  description: Fetches a paginated array of anonymised candidates.
+  description: Fetches a paginated array of anonymised candidates. Optionally filter candidates by their ISCO (International Standard Classification of Occupations) codes.
   tags:
     - Candidates
   operationId: getAllCandidates
@@ -22,6 +22,15 @@ get:
         default: 10
         minimum: 1
         maximum: 100
+    - name: iscoCodes
+      in: query
+      description: A list of ISCO codes to filter candidates by their occupations. Provide one or more ISCO codes as a comma-separated list (e.g., `1234,5678`).
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+        example: ["1234", "5678"]
   responses:
     '200':
       description: A page of anonymised candidates
