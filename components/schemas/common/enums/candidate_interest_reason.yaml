@@ -1,0 +1,18 @@
+type: string
+enum:
+  - "CvReview"
+  - "Interview"
+  - "AccessToSkillsPassportServices"
+  - "AccessToOnlineEducation"
+  - "AccessToHousingServices"
+  - "AccessToFinancialSupportServices"
+  - "Other"
+x-enum-varnames:
+  - "CvReview"
+  - "Interview"
+  - "AccessToSkillsPassportServices"
+  - "AccessToOnlineEducation"
+  - "AccessToHousingServices"
+  - "AccessToFinancialSupportServices"
+  - "Other"
+example: "Interview"
