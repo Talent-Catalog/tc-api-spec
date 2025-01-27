@@ -43,3 +43,7 @@ components:
         $ref: ./components/schemas/v1/IdentifiableCandidatePage.yaml
       IdentifiableDependant:
         $ref: ./components/schemas/v1/IdentifiableDependant.yaml
+      IdentifiableCandidateVisaCheck:
+        $ref: ./components/schemas/v1/IdentifiableCandidateVisaCheck.yaml
+      IdentifiableCandidateVisaJobCheck:
+        $ref: ./components/schemas/v1/IdentifiableCandidateVisaJobCheck.yaml
