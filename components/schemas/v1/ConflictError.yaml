@@ -1,0 +1,19 @@
+type: object
+properties:
+  error:
+    type: string
+    description: Error message.
+    example: "POTENTIAL_DUPLICATE"
+  message:
+    type: string
+    description: Human-readable error message
+    example: "A candidate with this email address already exists."
+  statusCode:
+    type: integer
+    description: The HTTP status code associated with the error.
+    example: 409
+  timestamp:
+    type: string
+    format: date-time
+    description: The timestamp when the error occurred.
+    example: "2024-11-27T17:15:00Z"
