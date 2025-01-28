@@ -1,15 +1,13 @@
 type: string
 enum:
-  - "CvReview"
-  - "Interview"
+  - "EmployerInterest"
   - "AccessToSkillsPassportServices"
   - "AccessToOnlineEducation"
   - "AccessToHousingServices"
   - "AccessToFinancialSupportServices"
   - "Other"
 x-enum-varnames:
-  - "CvReview"
-  - "Interview"
+  - "EmployerInterest"
   - "AccessToSkillsPassportServices"
   - "AccessToOnlineEducation"
   - "AccessToHousingServices"
