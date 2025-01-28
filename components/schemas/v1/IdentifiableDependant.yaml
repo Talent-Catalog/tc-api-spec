@@ -6,6 +6,11 @@ allOf:
         type: string
         description: The name of the dependant.
         example: "Jane Doe"
+      dob:
+        type: string
+        description: Dependant's date of birth. A date without a time-zone in the ISO-8601 calendar system.
+        format: date
+        example: "1985-06-15"
       registeredNumber:
         type: string
         description: The registration number of the dependant.

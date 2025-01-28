@@ -1,0 +1,12 @@
+allOf:
+  - $ref: './CandidateVisaJobCheck.yaml'
+  - type: object
+    properties:
+# todo sm when the tc service sends tcEligibility the below will no longer be needed
+# todo sm the IdentifiableCandidateVisaJobCheck, IdentifiableCandidateVisaCheck can then be removed
+# todo and the candidateVisaChecks field can be removed from IdentifiableCandidate
+# todo see: TC service issue #1844
+      tbbEligibility:
+        description: The candidate is eligible for the Talent Catalog.
+        allOf:
+          - $ref: ../common/enums/tc_eligibility_assessment.yaml

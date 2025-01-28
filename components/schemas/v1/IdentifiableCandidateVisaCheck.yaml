@@ -1,0 +1,9 @@
+allOf:
+  - $ref: './CandidateVisaCheck.yaml'
+  - type: object
+    properties:
+      candidateVisaJobChecks:
+        type: array
+        description: The job checks for the candidate's visa.
+        items:
+          $ref: ./IdentifiableCandidateVisaJobCheck.yaml

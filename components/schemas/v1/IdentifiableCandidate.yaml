@@ -10,6 +10,16 @@ allOf:
         type: string
         description: Unique candidate number.
         example: "12345678"
+      candidateDependants:
+        type: array
+        description: List of dependants related to the candidate.
+        items:
+          $ref: ./IdentifiableDependant.yaml
+      candidateVisaChecks:
+        type: array
+        description: List of visa checks related to the candidate.
+        items:
+          $ref: ./IdentifiableCandidateVisaCheck.yaml
       dob:
         type: string
         description: Candidate's date of birth. A date without a time-zone in the ISO-8601 calendar system.
