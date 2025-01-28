@@ -1,7 +1,7 @@
 type: object
 description: Represents a Candidate with detailed properties and relationships.
 properties:
-  uuid:
+  publicId:
     type: string
     format: uuid
     description: Universally unique identifier for the candidate
@@ -127,9 +127,9 @@ properties:
     type: string
     description: Notes related to the candidate's conflict participation.
     example: "Conflict participation notes"
-  contactConsentPartners:
+  contactConsentTcPartners:
     type: boolean
-    description: Indicates whether the candidate has given consent to be contacted by partners.
+    description: Indicates whether the candidate has given consent to be contacted by TC partners.
     example: true
   contactConsentRegistration:
     type: boolean
@@ -356,10 +356,10 @@ properties:
     description: Indicates whether the candidate's partner is registered.
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
-  partnerCandidateId:
+  partnerPublicId:
     type: string
     format: uuid
-    description: ID of the candidate's partner (if also a candidate in the system)
+    description: Anonymised public ID of the candidate's partner (if also a candidate in the system)
     example: 123e4567-e89b-12d3-a456-426614174000
   partnerCitizenship:
     type: array
@@ -372,10 +372,6 @@ properties:
     description: Education level of the candidate's partner.
     allOf:
       - $ref: ./EducationLevel.yaml
-  partnerEduLevelNotes:
-    type: string
-    description: Notes related to the education level of the candidate's partner.
-    example: "Partner education level notes"
   partnerEnglish:
     description: Indicates whether the candidate's partner speaks English.
     allOf:
@@ -401,10 +397,6 @@ properties:
     description: Occupation of the candidate's partner.
     allOf:
       - $ref: ./Occupation.yaml
-  partnerOccupationNotes:
-    type: string
-    description: Notes related to the occupation of the candidate's partner.
-    example: "Partner occupation notes"
   residenceStatus:
     description: Residence status of the candidate.
     allOf:

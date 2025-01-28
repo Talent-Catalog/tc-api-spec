@@ -8,7 +8,7 @@ get:
     - name: searchId
       in: path
       required: true
-      description: A unique search identifier for retrieving candidates associated with a specific search.
+      description: A unique public identifier for retrieving candidates associated with a specific search.
       schema:
         type: string
         format: uuid
