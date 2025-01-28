@@ -1,6 +1,6 @@
 type: object
 properties:
-  error:
+  errorCode:
     type: string
     description: Error message.
     example: "POTENTIAL_DUPLICATE"
