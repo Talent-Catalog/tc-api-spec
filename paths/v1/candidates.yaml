@@ -28,7 +28,21 @@ get:
       required: false
       schema:
         type: string
-        example: 1234,5678
+        example: "1234,5678"
+    - name: location
+      in: query
+      description: A list of ISO 3166-1 alpha-2 location codes to filter candidates by their current location. Provide one or more ISO codes as a comma-separated list (e.g., `US,GB`).
+      required: false
+      schema:
+        type: string
+        example: "US,GB"
+    - name: nationality
+      in: query
+      description: A list of ISO 3166-1 alpha-2 nationality codes to filter candidates by their nationality. Provide one or more ISO codes as a comma-separated list (e.g., `FR,DE`).
+      required: false
+      schema:
+        type: string
+        example: "FR,DE"
   responses:
     '200':
       description: A page of anonymised candidates
