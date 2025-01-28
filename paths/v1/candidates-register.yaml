@@ -28,8 +28,14 @@ post:
                 example: "Candidate successfully registered."
               publicId:
                 type: string
+                format: base64-uuid
                 description: The unique public ID assigned to the registered candidate
-                example: "123e4567-e89b-12d3-a456-426614174000"
+                example: "ABcd2EFgHIjkLMNOp3QR-S"
+              registrationId:
+                type: string
+                format: base64-uuid
+                description: The unique registration ID for tracking the candidate's registration
+                example: "ABcd2EFgHIjkLMNOp3QR-S"
     '400':
       description: Bad request - Invalid request payload
       content:
