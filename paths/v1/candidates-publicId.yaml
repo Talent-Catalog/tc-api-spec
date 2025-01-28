@@ -11,8 +11,8 @@ get:
       description: Unique public ID of the candidate to retrieve
       schema:
         type: string
-        format: uuid
-        example: "123e4567-e89b-12d3-a456-426614174000"
+        format: base64-uuid
+        example: "ABcd2EFgHIjkLMNOp3QR-S"
   responses:
     '200':
       description: An anonymised candidate's details
