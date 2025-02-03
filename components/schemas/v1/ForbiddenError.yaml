@@ -1,9 +1,13 @@
 type: object
 properties:
-  error:
+  errorCode:
     type: string
     description: Error message.
-    example: "You do not have permission to create a search."
+    example: "FORBIDDEN"
+  message:
+    type: string
+    description: Human-readable error message
+    example: "You do not have permission to create a candidate interest."
   statusCode:
     type: integer
     description: The HTTP status code associated with the error.

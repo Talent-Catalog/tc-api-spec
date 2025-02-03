@@ -3,9 +3,9 @@ description: Represents a Candidate with detailed properties and relationships.
 properties:
   publicId:
     type: string
-    format: uuid
+    format: base64-uuid
     description: Universally unique identifier for the candidate
-    example: 123e4567-e89b-12d3-a456-426614174000
+    example: ABcd2EFgHIjkLMNOp3QR-S
   asylumYear:
     type: string
     format: date
@@ -358,9 +358,9 @@ properties:
       - $ref: ../common/enums/yes_no_unsure.yaml
   partnerPublicId:
     type: string
-    format: uuid
+    format: base64-uuid
     description: Anonymised public ID of the candidate's partner (if also a candidate in the system)
-    example: 123e4567-e89b-12d3-a456-426614174000
+    example: ABcd2EFgHIjkLMNOp3QR-S
   partnerCitizenship:
     type: array
     description: Citizenship(s) of the candidate's partner.

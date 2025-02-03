@@ -30,10 +30,10 @@ paths:
     $ref: paths/v1/candidates.yaml
   /v1/candidates/{publicId}:
     $ref: ./paths/v1/candidates-publicId.yaml
-  /v1/candidates/byListId/{listId}: # todo - replace with /v1/lists/{listId}/candidates
-    $ref: ./paths/v1/candidates-byListId-listId.yaml
-  /v1/candidates/bySearchId/{searchId}: # todo - replace with /v1/searches/{searchId}/candidates
-    $ref: ./paths/v1/candidates-bySearchId-searchId.yaml
+  /v1/candidates/{publicId}/express-interest:
+    $ref: ./paths/v1/candidates-express-interest.yaml
+  /v1/candidates/register:
+    $ref: ./paths/v1/candidates-register.yaml
 
 components:
     schemas:

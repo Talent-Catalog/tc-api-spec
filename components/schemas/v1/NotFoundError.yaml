@@ -1,17 +1,17 @@
 type: object
 properties:
-  errorCode:
+  error:
     type: string
     description: Error message.
-    example: "POTENTIAL_DUPLICATE"
+    example: "CANDIDATE_NOT_FOUND"
   message:
     type: string
     description: Human-readable error message
-    example: "A candidate with this email address already exists."
+    example: "Candidate with the provided publicId was not found."
   statusCode:
     type: integer
     description: The HTTP status code associated with the error.
-    example: 409
+    example: 404
   timestamp:
     type: string
     format: date-time

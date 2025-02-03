@@ -11,7 +11,8 @@ get:
       description: Unique public ID of the candidate to retrieve
       schema:
         type: string
-        format: uuid
+        format: base64-uuid
+        example: "ABcd2EFgHIjkLMNOp3QR-S"
   responses:
     '200':
       description: An anonymised candidate's details
@@ -21,7 +22,25 @@ get:
             $ref: ../../components/schemas/v1/Candidate.yaml
     '404':
       description: Not found - Candidate not found
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/NotFoundError.yaml
     '400':
       description: Bad request - Invalid candidate ID
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/BadRequestError.yaml
+    '401':
+      description: Unauthorised - Access token is missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/UnauthorisedError.yaml
     '500':
       description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/InternalServerError.yaml

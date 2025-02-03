@@ -1,8 +1,12 @@
 type: object
 properties:
-  error:
+  errorCode:
     type: string
     description: Error message.
+    example: "SERVICE_UNAVAILABLE"
+  message:
+    type: string
+    description: Human-readable error message
     example: "An unexpected error occurred. Please try again later."
   statusCode:
     type: integer

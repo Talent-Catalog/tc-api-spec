@@ -1,17 +1,13 @@
 type: object
 properties:
-  error:
+  errorCode:
     type: string
-    description: High-level error message summarising the issue.
-    example: "Invalid request payload."
-  details:
-    type: array
-    description: A list of detailed validation or field-specific error messages.
-    items:
-      type: string
-    example:
-      - "The 'minYrs' field must be a positive integer."
-      - "The 'minAge' field must be less than or equal to 'maxAge'."
+    description: Machine-readable error code
+    example: "INVALID_PAGINATION"
+  message:
+    type: string
+    description: Human-readable error message
+    example: "Page must be greater than or equal to 1."
   statusCode:
     type: integer
     description: The HTTP status code associated with the error.
