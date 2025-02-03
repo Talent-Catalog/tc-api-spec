@@ -30,8 +30,8 @@ paths:
     $ref: paths/v1/candidates.yaml
   /v1/candidates/{publicId}:
     $ref: ./paths/v1/candidates-publicId.yaml
-  /v1/candidates/{publicId}/express-interest:
-    $ref: ./paths/v1/candidates-express-interest.yaml
+  /v1/candidates/{publicId}/offer-to-assist:
+    $ref: ./paths/v1/candidates-offer-to-assist.yaml
   /v1/candidates/register:
     $ref: ./paths/v1/candidates-register.yaml
 
