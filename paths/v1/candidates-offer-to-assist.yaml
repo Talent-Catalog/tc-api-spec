@@ -1,9 +1,9 @@
 post:
-  summary: Express interest in a candidate
-  description: Allows prospective employers, recruiters, and other candidate service providers to express their interest in a specific anonymised candidate. For example, to proceed further with reviewing their CV and arranging interviews, or to offer eligible candidate's access to specialised services such as digital passports.
+  summary: Offer to assist candidates
+  description: Allows prospective employers, recruiters, and other candidate service providers to offer to assist one or more candidates. For example, to proceed further with reviewing their CV and arranging interviews, or to offer eligible candidate's access to specialised services such as access to education, migration or settlement services.
   tags:
     - Candidates
-  operationId: expressInterestInCandidate
+  operationId: offerToAssistCandidates
   parameters:
     - name: publicId
       in: path
@@ -21,6 +21,13 @@ post:
         schema:
           type: object
           properties:
+            publicIds:
+              type: array
+              items:
+                type: string
+                format: base64-uuid
+              description: A list of unique public IDs of the candidates.
+              example: ["ABcd2EFgHIjkLMNOp3QR-S", "XYlm9NOqRSTuvWXYZ456-T"]
             serviceProviderId: # todo depending on the api security method, this may not be required
               type: string
               description: The unique identifier of the employer, recruiter or candidate service provider
@@ -29,8 +36,8 @@ post:
               type: string
               description: The reason for expressing interest in the candidate
               allOf:
-                - $ref: ../../components/schemas/common/enums/candidate_interest_reason.yaml
-              example: "interview"
+                - $ref: ../../components/schemas/common/enums/candidate_assistance_type.yaml
+              example: "JobOpportunity"
             additionalNotes:
               type: string
               description: Optional additional notes provided by the employer, recruiter or candidate service provider
