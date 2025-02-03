@@ -1,0 +1,16 @@
+type: string
+enum:
+  - "JobOpportunity"
+  - "EducationService"
+  - "MigrationService"
+  - "FinancialSupportService"
+  - "SettlementService"
+  - "Other"
+x-enum-varnames:
+  - "JobOpportunity"
+  - "EducationService"
+  - "MigrationService"
+  - "FinancialSupportService"
+  - "SettlementService"
+  - "Other"
+example: "JobOpportunity"
