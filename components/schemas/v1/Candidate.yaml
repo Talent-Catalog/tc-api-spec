@@ -90,11 +90,6 @@ properties:
   candidateMessage:
     type: string
     description: Message written by the candidate.
-  candidateNotes:
-    type: array
-    description: List of notes related to the candidate.
-    items:
-      $ref: ./CandidateNote.yaml
   candidateOccupations:
     type: array
     description: List of occupations related to the candidate.
