@@ -77,11 +77,6 @@ properties:
     description: List of exams taken by the candidate.
     items:
       $ref: ./CandidateExam.yaml
-  candidateJobExperiences:
-    type: array
-    description: List of job experiences of the candidate.
-    items:
-      $ref: ./CandidateJobExperience.yaml
   candidateLanguages:
     type: array
     description: List of languages spoken by the candidate.
