@@ -417,11 +417,6 @@ properties:
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
-  returnHomeWhen:
-    type: string
-    format: date
-    description: Date when the candidate plans to return home.
-    example: "2025-12-31"
   resettleThird:
     description: Indicates whether the candidate has ever applied for resettlement or emigration to a 3rd country.
     allOf:
