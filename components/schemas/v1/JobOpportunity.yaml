@@ -34,6 +34,6 @@ properties:
     description: The number of candidates the employer has committed to hiring for this opportunity.
     example: 3
   employerHiredInternationally:
-    type: boolean
+    type: string
     description: Whether the employer has hired internationally.
-    example: true
+    example: Yes
