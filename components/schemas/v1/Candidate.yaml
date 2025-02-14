@@ -77,11 +77,6 @@ properties:
     description: List of exams taken by the candidate.
     items:
       $ref: ./CandidateExam.yaml
-  candidateJobExperiences:
-    type: array
-    description: List of job experiences of the candidate.
-    items:
-      $ref: ./CandidateJobExperience.yaml
   candidateLanguages:
     type: array
     description: List of languages spoken by the candidate.
@@ -90,11 +85,6 @@ properties:
   candidateMessage:
     type: string
     description: Message written by the candidate.
-  candidateNotes:
-    type: array
-    description: List of notes related to the candidate.
-    items:
-      $ref: ./CandidateNote.yaml
   candidateOccupations:
     type: array
     description: List of occupations related to the candidate.
@@ -427,11 +417,6 @@ properties:
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
-  returnHomeWhen:
-    type: string
-    format: date
-    description: Date when the candidate plans to return home.
-    example: "2025-12-31"
   resettleThird:
     description: Indicates whether the candidate has ever applied for resettlement or emigration to a 3rd country.
     allOf:
