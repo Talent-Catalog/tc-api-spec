@@ -1,6 +1,6 @@
-# Talent Catalog Anonymization Service API Specification
+# Talent Catalog API Specification
 
-This repository contains the **OpenAPI specification** for the **Talent Catalog Anonymization Service API**.
+This repository contains the **OpenAPI specification** for the **Talent Catalog API**.
 
 
 ## Steps to View the API Specification with ReDoc
