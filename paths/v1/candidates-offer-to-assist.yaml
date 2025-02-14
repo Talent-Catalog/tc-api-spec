@@ -52,10 +52,10 @@ post:
               message:
                 type: string
                 description: Success message
-                example: "Your interest has been successfully recorded."
-              interestId:
+                example: "Your offer has been successfully recorded."
+              offerId:
                 type: string
-                description: The unique ID for the expressed interest record
+                description: The unique ID for the offer to assist record
                 example: "interest-7890"
     '400':
       description: Bad request - Invalid request payload or candidate ID
