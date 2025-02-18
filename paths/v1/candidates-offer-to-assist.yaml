@@ -14,7 +14,7 @@ post:
           properties:
             candidates:
               type: array
-              description: A list of candidates with their public IDs and optional coupon codes.
+              description: A list of candidate public IDs and optional coupon codes.
               items:
                 type: object
                 properties:
