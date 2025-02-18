@@ -1,11 +1,11 @@
 post:
-  summary: Offer to assist candidates
-  description: Allows prospective employers, recruiters, and other candidate service providers to offer assistance to one or more candidates. For example, to proceed further with a job opportunity, or to offer eligible candidate's access to specialised services such as education, migration or settlement support.
+  summary: Expression of interest in candidates for a job
+  description: Allows prospective employers or recruiters to indicate that one or more candidates look like they match the requirements of a job, and that they are interested in proceeding further with those candidates.
   tags:
     - Candidates
-  operationId: offerToAssistCandidates
+  operationId: jobMatch
   requestBody:
-    description: Information about the prospective employer, recruiter or candidate service provider expressing interest in the candidate
+    description: Information about the prospective employer or recruiter who has the job
     required: true
     content:
       application/json:
@@ -14,7 +14,7 @@ post:
           properties:
             candidates:
               type: array
-              description: A list of candidate public IDs and optional coupon codes.
+              description: A list of candidate public IDs.
               items:
                 type: object
                 properties:
@@ -23,27 +23,17 @@ post:
                     format: base64-uuid
                     description: The unique public ID of the candidate.
                     example: "ABcd2EFgHIjkLMNOp3QR-S"
-                  couponCode:
-                    type: string
-                    description: An optional coupon code that the candidate may use for service access.
-                    example: "COUPON2025"
             serviceProviderId: # todo depending on the api security method, this may not be required
               type: string
-              description: The unique identifier of the employer, recruiter or candidate service provider
+              description: The unique identifier of the employer or recruiter
               example: "employer-12345"
-            reason:
-              type: string
-              description: The reason for expressing interest in the candidate
-              allOf:
-                - $ref: ../../components/schemas/common/enums/candidate_assistance_type.yaml
-              example: "JobOpportunity"
             additionalNotes:
               type: string
-              description: Optional additional notes provided by the employer, recruiter or candidate service provider
-              example: "Candidate's experience aligns with our job requirements. We would like to arrange an interview at the earliest convenience."
+              description: Optional additional notes provided by the employer or recruiter
+              example: "Candidates' experience aligns with our job requirements. We would like to arrange interviews at the earliest convenience."
   responses:
     '201':
-      description: Successfully expressed interest in the candidate
+      description: Successfully expressed interest in matching the candidates to the job
       content:
         application/json:
           schema:
@@ -52,11 +42,11 @@ post:
               message:
                 type: string
                 description: Success message
-                example: "Your offer has been successfully recorded."
-              offerId:
+                example: "Your interest has been successfully recorded."
+              jobMatchId:
                 type: string
-                description: The unique ID for the offer to assist record
-                example: "interest-7890"
+                description: The unique ID for the job match record
+                example: "job-match-7890"
     '400':
       description: Bad request - Invalid request payload or candidate ID
       content:
@@ -70,7 +60,7 @@ post:
           schema:
             $ref: ../../components/schemas/v1/UnauthorisedError.yaml
     '403':
-      description: Forbidden - You do not have permission to offer assistance to candidates
+      description: Forbidden - You do not have permission to job match
       content:
         application/json:
           schema:
