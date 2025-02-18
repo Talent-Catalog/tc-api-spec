@@ -1,0 +1,91 @@
+type: object
+description: Represents non identifiable Candidate data that originates in the original registration.
+properties:
+  candidateCertifications:
+    type: array
+    description: List of certifications held by the candidate.
+    items:
+      $ref: ./CandidateCertification.yaml
+  candidateCitizenships:
+    type: array
+    description: List of citizenships held by the candidate.
+    items:
+      $ref: ./CandidateCitizenship.yaml
+  candidateDestinations:
+    type: array
+    description: List of destinations related to the candidate.
+    items:
+      $ref: ./Destination.yaml
+  candidateEducations:
+    type: array
+    description: List of educational achievements of the candidate.
+    items:
+      $ref: ./CandidateEducation.yaml
+  candidateExams:
+    type: array
+    description: List of exams taken by the candidate.
+    items:
+      $ref: ./CandidateExam.yaml
+  candidateLanguages:
+    type: array
+    description: List of languages spoken by the candidate.
+    items:
+      $ref: ./CandidateLanguage.yaml
+  candidateMessage:
+    type: string
+    description: Message written by the candidate.
+  candidateOccupations:
+    type: array
+    description: List of occupations related to the candidate.
+    items:
+      $ref: ./CandidateOccupation.yaml
+  candidateSkills:
+    type: array
+    description: List of skills possessed by the candidate.
+    items:
+      $ref: ./CandidateSkill.yaml
+  city:
+    type: string
+    description: City of residence
+    example: "Amman"
+  contactConsentTcPartners:
+    type: boolean
+    description: Indicates whether the candidate has given consent to be contacted by TC partners.
+    example: true
+  contactConsentRegistration:
+    type: boolean
+    description: Indicates whether the candidate has given consent to be contacted regarding their registration and employment opportunities.
+    example: true
+  country:
+    description: Country where candidate is currently located
+    allOf:
+      - $ref: ./Country.yaml
+  gender:
+    description: Candidate's gender.
+    allOf:
+      - $ref: ../common/enums/gender.yaml
+  maxEducationLevel:
+    description: The maximum education level of the candidate
+    allOf:
+      - $ref: ./EducationLevel.yaml
+  nationality:
+    description: Nationality of the candidate.
+    allOf:
+      - $ref: ./Country.yaml
+  surveyType:
+    description: Survey type associated with the candidate.
+    allOf:
+      - $ref: ./SurveyType.yaml
+  surveyComment:
+    type: string
+    description: Comment associated with the survey.
+    example: "Survey comment"
+  unhcrConsent:
+    description: Indicates whether the candidate has given consent for UNHCR to be notified that they have registered on the Talent Catalog.
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
+  yearOfArrival:
+    type: integer
+    format: int32
+    description: Year of arrival in the country
+    example: 2010

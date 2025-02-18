@@ -10,12 +10,16 @@ post:
     content:
       application/json:
         schema:
-          # todo sm for registration it may be simpler for users to have a simpler schema
-          # todo sm for example a schema that mirrors the data a candidate would provide when
-          # todo sm registering via the candidate portal
-          # todo sm - discussed with John and agreed to introduce a CandidateRegistration schema
-          # todo sm - See issue #22
-          $ref: ../../components/schemas/v1/IdentifiableCandidate.yaml
+          type: object
+          properties:
+            registrarId: # todo depending on the api security method, this may not be required
+              type: string
+              description: The unique identifier of organization supplying the registration data
+              example: "registrar-12345"
+            registrationData:
+              allOf:
+                - $ref: ../../components/schemas/v1/CandidateRegistration.yaml
+
   responses:
     '201':
       description: Candidate successfully registered with the Talent Catalog
