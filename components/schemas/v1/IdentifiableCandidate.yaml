@@ -1,5 +1,6 @@
 allOf:
   - $ref: './Candidate.yaml'
+  - $ref: './IdentifiableCandidateRegistrationFields.yaml'
   - type: object
     properties:
       id:
@@ -20,11 +21,6 @@ allOf:
         description: List of visa checks related to the candidate.
         items:
           $ref: ./IdentifiableCandidateVisaCheck.yaml
-      dob:
-        type: string
-        description: Candidate's date of birth. A date without a time-zone in the ISO-8601 calendar system.
-        format: date
-        example: "1985-06-15"
       externalId:
         type: string
         description: External ID of the candidate.
@@ -33,14 +29,6 @@ allOf:
         type: string
         description: Source of the external ID.
         example: "source1"
-      linkedInLink:
-        type: string
-        description: Candidate's LinkedIn profile URL.
-        example: "https://www.linkedin.com/in/johndoe"
-      phone:
-        type: string
-        description: Candidate's phone number.
-        example: "+1-234-567-890"
       address1:
         type: string
         description: Candidate's address line 1.
@@ -85,22 +73,10 @@ allOf:
         type: string
         description: Candidate's UNHCR file number.
         example: "12345678"
-      unhcrNumber:
-        type: string
-        description: Candidate's UNHCR number.
-        example: "12345678"
       unrwaFile:
         type: string
         description: Candidate's UNRWA file number.
         example: "12345678"
-      unrwaNumber:
-        type: string
-        description: Candidate's UNRWA number.
-        example: "12345678"
-      whatsapp:
-        type: string
-        description: Candidate's WhatsApp number.
-        example: "+1-234-567-890"
       textSearchId:
         type: string
         description: The ID of the corresponding elastic search record.

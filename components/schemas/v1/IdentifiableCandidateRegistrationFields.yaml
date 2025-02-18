@@ -1,0 +1,33 @@
+type: object
+properties:
+  dob:
+    type: string
+    description: Candidate's date of birth. A date without a time-zone in the ISO-8601 calendar system.
+    format: date
+    example: "1985-06-15"
+  firstName:
+    type: string
+    description: First name (and any middle names) of candidate
+  lastName:
+    type: string
+    description: Last name of candidate
+  linkedInLink:
+    type: string
+    description: Candidate's LinkedIn profile URL.
+    example: "https://www.linkedin.com/in/johndoe"
+  phone:
+    type: string
+    description: Candidate's phone number.
+    example: "+1-234-567-890"
+  unhcrNumber:
+    type: string
+    description: Candidate's UNHCR number.
+    example: "12345678"
+  unrwaNumber:
+    type: string
+    description: Candidate's UNRWA number.
+    example: "12345678"
+  whatsapp:
+    type: string
+    description: Candidate's WhatsApp number.
+    example: "+1-234-567-890"

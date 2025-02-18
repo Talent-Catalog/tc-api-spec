@@ -1,0 +1,3 @@
+allOf:
+  - $ref: './AnonCandidateRegistrationFields.yaml'
+  - $ref: './IdentifiableCandidateRegistrationFields.yaml'
