@@ -70,13 +70,13 @@ post:
           schema:
             $ref: ../../components/schemas/v1/UnauthorisedError.yaml
     '403':
-      description: Forbidden - You do not have permission to create a candidate interest
+      description: Forbidden - You do not have permission to offer assistance to candidates
       content:
         application/json:
           schema:
             $ref: ../../components/schemas/v1/ForbiddenError.yaml
     '404':
-      description: Not found - Candidate not found
+      description: Not found - Candidate(s) not found
       content:
         application/json:
           schema:
