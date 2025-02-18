@@ -4,15 +4,6 @@ post:
   tags:
     - Candidates
   operationId: offerToAssistCandidates
-  parameters:
-    - name: publicId
-      in: path
-      required: true
-      description: The unique public ID of the candidate
-      schema:
-        type: string
-        format: base64-uuid
-        example: "ABcd2EFgHIjkLMNOp3QR-S"
   requestBody:
     description: Information about the prospective employer, recruiter or candidate service provider expressing interest in the candidate
     required: true
@@ -61,10 +52,10 @@ post:
               message:
                 type: string
                 description: Success message
-                example: "Your interest has been successfully recorded."
-              interestId:
+                example: "Your offer has been successfully recorded."
+              offerId:
                 type: string
-                description: The unique ID for the expressed interest record
+                description: The unique ID for the offer to assist record
                 example: "interest-7890"
     '400':
       description: Bad request - Invalid request payload or candidate ID
