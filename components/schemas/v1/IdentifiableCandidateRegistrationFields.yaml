@@ -1,4 +1,5 @@
 type: object
+description: Identifiable Candidate data that originates in the original registration.
 properties:
   identity:
     allOf:
