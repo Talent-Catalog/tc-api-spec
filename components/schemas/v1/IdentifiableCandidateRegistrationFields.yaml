@@ -1,16 +1,13 @@
 type: object
 properties:
+  identity:
+    allOf:
+      - $ref: './User.yaml'
   dob:
     type: string
     description: Candidate's date of birth. A date without a time-zone in the ISO-8601 calendar system.
     format: date
     example: "1985-06-15"
-  firstName:
-    type: string
-    description: First name (and any middle names) of candidate
-  lastName:
-    type: string
-    description: Last name of candidate
   linkedInLink:
     type: string
     description: Candidate's LinkedIn profile URL.
