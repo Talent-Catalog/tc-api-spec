@@ -1,3 +1,4 @@
+description: Data required to register a candidate on the Talent Catalog.
 allOf:
-  - $ref: './AnonCandidateRegistrationFields.yaml'
   - $ref: './IdentifiableCandidateRegistrationFields.yaml'
+  - $ref: './AnonCandidateRegistrationFields.yaml'
