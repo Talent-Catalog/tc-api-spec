@@ -198,12 +198,13 @@ allOf:
         format: float
         description: IELTS score of the candidate.
         example: 7.5
-      intRecruitReasons:
-        type: array
-        description: Reasons for the candidate's international recruitment.
-        items:
-          allOf:
-            - $ref: ../common/enums/int_recruit_reason.yaml
+      # todo This is currently causing compile errors when generating the API
+#      intRecruitReasons:
+#        type: array
+#        description: Reasons for the candidate's international recruitment.
+#        items:
+#          allOf:
+#            - $ref: ../common/enums/int_recruit_reason.yaml
       intRecruitOther:
         type: string
         description: Other reasons for the candidate's international recruitment.
@@ -220,12 +221,13 @@ allOf:
         type: string
         description: Notes related to the candidate leaving home.
         example: "Leaving home notes"
-      leftHomeReasons:
-        type: array
-        description: Reasons for the candidate leaving home.
-        items:
-          allOf:
-            - $ref: ../common/enums/left_home_reason.yaml
+# todo This is currently causing compile errors when generating the API
+#      leftHomeReasons:
+#        type: array
+#        description: Reasons for the candidate leaving home.
+#        items:
+#          allOf:
+#            - $ref: ../common/enums/left_home_reason.yaml
       maritalStatus:
         description: Marital status of the candidate.
         allOf:
