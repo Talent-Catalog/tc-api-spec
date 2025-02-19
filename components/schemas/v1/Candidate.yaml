@@ -202,8 +202,7 @@ allOf:
         type: array
         description: Reasons for the candidate's international recruitment.
         items:
-          allOf:
-            - $ref: ../common/enums/int_recruit_reason.yaml
+          $ref: ../common/enums/int_recruit_reason.yaml
       intRecruitOther:
         type: string
         description: Other reasons for the candidate's international recruitment.
@@ -224,8 +223,7 @@ allOf:
         type: array
         description: Reasons for the candidate leaving home.
         items:
-          allOf:
-            - $ref: ../common/enums/left_home_reason.yaml
+          $ref: ../common/enums/left_home_reason.yaml
       maritalStatus:
         description: Marital status of the candidate.
         allOf:
