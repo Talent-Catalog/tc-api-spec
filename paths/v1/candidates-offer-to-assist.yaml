@@ -1,6 +1,6 @@
 post:
   summary: Offer to assist candidates
-  description: Allows prospective employers, recruiters, and other candidate service providers to offer assistance to one or more candidates. For example, to proceed further with a job opportunity, or to offer eligible candidate's access to specialised services such as education, migration or settlement support.
+  description: Allows candidate service providers to offer assistance to one or more candidates. For example, to invite eligible candidate's to access specialised services for education, migration or settlement support.
   tags:
     - Candidates
   operationId: offerToAssistCandidates
