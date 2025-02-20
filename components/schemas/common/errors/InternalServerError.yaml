@@ -1,0 +1,10 @@
+allOf:
+  - $ref: "ErrorBase.yaml"
+  - type: object
+    properties:
+      title:
+        example: "Service Unavailable"
+      status:
+        example: 500
+      detail:
+        example: "An unexpected error occurred. Please try again later."

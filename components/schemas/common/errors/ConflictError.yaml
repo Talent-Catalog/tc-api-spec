@@ -1,0 +1,10 @@
+allOf:
+  - $ref: "ErrorBase.yaml"
+  - type: object
+    properties:
+      title:
+        example: "Potential Duplicate"
+      status:
+        example: 409
+      detail:
+        example: "A candidate with this email address already exists."

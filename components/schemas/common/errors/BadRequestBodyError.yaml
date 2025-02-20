@@ -1,0 +1,10 @@
+allOf:
+  - $ref: "ErrorBase.yaml"
+  - type: object
+    properties:
+      title:
+        example: "Invalid Request"
+      status:
+        example: 400
+      detail:
+        example: "Request body is missing required fields."

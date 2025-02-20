@@ -1,0 +1,10 @@
+allOf:
+  - $ref: "ErrorBase.yaml"
+  - type: object
+    properties:
+      title:
+        example: "Resource not found"
+      status:
+        example: 404
+      detail:
+        example: "Candidate with the provided publicId was not found."
