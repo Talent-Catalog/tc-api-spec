@@ -55,18 +55,18 @@ get:
     '400':
       description: Bad request
       content:
-        application/json:
+        application/problem+json:
           schema:
             $ref: ../../components/schemas/common/errors/BadRequestParamError.yaml
     '401':
       description: Unauthorised
       content:
-        application/json:
+        application/problem+json:
           schema:
             $ref: ../../components/schemas/common/errors/UnauthorisedError.yaml
     '500':
       description: Internal server error
       content:
-        application/json:
+        application/problem+json:
           schema:
             $ref: ../../components/schemas/common/errors/InternalServerError.yaml

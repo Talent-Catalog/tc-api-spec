@@ -20,27 +20,27 @@ get:
         application/json:
           schema:
             $ref: ../../components/schemas/v1/Candidate.yaml
-    '404':
-      description: Not found - Candidate not found
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/common/errors/NotFoundError.yaml
     '400':
       description: Bad request - Invalid candidate ID
       content:
-        application/json:
+        application/problem+json:
           schema:
             $ref: ../../components/schemas/common/errors/BadRequestParamError.yaml
     '401':
       description: Unauthorised - Access token is missing or invalid
       content:
-        application/json:
+        application/problem+json:
           schema:
             $ref: ../../components/schemas/common/errors/UnauthorisedError.yaml
+    '404':
+      description: Not found - Candidate not found
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../../components/schemas/common/errors/NotFoundError.yaml
     '500':
       description: Internal server error
       content:
-        application/json:
+        application/problem+json:
           schema:
             $ref: ../../components/schemas/common/errors/InternalServerError.yaml
