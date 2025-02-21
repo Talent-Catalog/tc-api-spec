@@ -1,0 +1,10 @@
+allOf:
+  - $ref: "ErrorBase.yaml"
+  - type: object
+    properties:
+      title:
+        example: "Forbidden"
+      status:
+        example: 403
+      detail:
+        example: "You do not have permission to offer candidate services."

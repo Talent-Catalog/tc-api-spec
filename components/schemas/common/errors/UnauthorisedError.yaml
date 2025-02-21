@@ -1,0 +1,10 @@
+allOf:
+  - $ref: "ErrorBase.yaml"
+  - type: object
+    properties:
+      title:
+        example: "Authentication required"
+      status:
+        example: 401
+      detail:
+        example: "Invalid API key."

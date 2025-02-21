@@ -38,14 +38,23 @@ paths:
     $ref: ./paths/v1/candidates-register.yaml
 
 components:
-    schemas:
-      IdentifiableCandidate:
-        $ref: ./components/schemas/v1/IdentifiableCandidate.yaml
-      IdentifiableCandidatePage:
-        $ref: ./components/schemas/v1/IdentifiableCandidatePage.yaml
-      IdentifiableDependant:
-        $ref: ./components/schemas/v1/IdentifiableDependant.yaml
-      IdentifiableCandidateVisaCheck:
-        $ref: ./components/schemas/v1/IdentifiableCandidateVisaCheck.yaml
-      IdentifiableCandidateVisaJobCheck:
-        $ref: ./components/schemas/v1/IdentifiableCandidateVisaJobCheck.yaml
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+
+  schemas:
+    IdentifiableCandidate:
+      $ref: ./components/schemas/v1/IdentifiableCandidate.yaml
+    IdentifiableCandidatePage:
+      $ref: ./components/schemas/v1/IdentifiableCandidatePage.yaml
+    IdentifiableDependant:
+      $ref: ./components/schemas/v1/IdentifiableDependant.yaml
+    IdentifiableCandidateVisaCheck:
+      $ref: ./components/schemas/v1/IdentifiableCandidateVisaCheck.yaml
+    IdentifiableCandidateVisaJobCheck:
+      $ref: ./components/schemas/v1/IdentifiableCandidateVisaJobCheck.yaml
+
+security:
+  - ApiKeyAuth: []

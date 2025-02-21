@@ -53,20 +53,20 @@ get:
     '204':
       description: No content - No candidates available for the requested page
     '400':
-      description: Bad request - Invalid pagination parameters
+      description: Bad request
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/BadRequestError.yaml
+            $ref: ../../components/schemas/common/errors/BadRequestParamError.yaml
     '401':
-      description: Unauthorised - Access token is missing or invalid
+      description: Unauthorised
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/UnauthorisedError.yaml
+            $ref: ../../components/schemas/common/errors/UnauthorisedError.yaml
     '500':
       description: Internal server error
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/InternalServerError.yaml
+            $ref: ../../components/schemas/common/errors/InternalServerError.yaml

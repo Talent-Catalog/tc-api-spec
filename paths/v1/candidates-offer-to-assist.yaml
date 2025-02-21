@@ -60,30 +60,30 @@ post:
     '400':
       description: Bad request - Invalid request payload or candidate ID
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/BadRequestError.yaml
+            $ref: ../../components/schemas/common/errors/BadRequestBodyError.yaml
     '401':
       description: Unauthorised - Access token is missing or invalid
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/UnauthorisedError.yaml
+            $ref: ../../components/schemas/common/errors/UnauthorisedError.yaml
     '403':
       description: Forbidden - You do not have permission to offer assistance to candidates
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/ForbiddenError.yaml
+            $ref: ../../components/schemas/common/errors/ForbiddenError.yaml
     '404':
       description: Not found - Candidate(s) not found
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/NotFoundError.yaml
+            $ref: ../../components/schemas/common/errors/NotFoundError.yaml
     '500':
       description: Internal server error
       content:
-        application/json:
+        application/problem+json:
           schema:
-            $ref: ../../components/schemas/v1/InternalServerError.yaml
+            $ref: ../../components/schemas/common/errors/InternalServerError.yaml

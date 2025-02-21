@@ -1,0 +1,6 @@
+allOf:
+  - $ref: "BadRequestBase.yaml"
+  - type: object
+    properties:
+      detail:
+        example: "Request body is missing required fields."
