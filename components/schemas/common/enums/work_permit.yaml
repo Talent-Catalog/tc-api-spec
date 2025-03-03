@@ -1,12 +1,12 @@
 type: string
 enum:
-  - "NoResponse"
-  - "YesNotDesired"
-  - "YesDesired"
-  - "No"
+  - "NO_RESPONSE"
+  - "YES_NOT_DESIRED"
+  - "YES_DESIRED"
+  - "NO"
 x-enum-varnames:
-  - "NoResponse"
-  - "YesNotDesired"
-  - "YesDesired"
-  - "No"
-example: "YesDesired"
+  - "NO_RESPONSE"
+  - "YES_NOT_DESIRED"
+  - "YES_DESIRED"
+  - "NO"
+example: "YES_DESIRED"

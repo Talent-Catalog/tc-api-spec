@@ -1,14 +1,14 @@
 type: string
 enum:
-  - "NoResponse"
+  - "NO_RESPONSE"
   - "UNHCR"
   - "UNRWA"
-  - "Neither"
+  - "NEITHER"
   - "NA"
 x-enum-varnames:
-  - "NoResponse"
+  - "NO_RESPONSE"
   - "UNHCR"
   - "UNRWA"
-  - "Neither"
+  - "NEITHER"
   - "NA"
 example: "UNHCR"

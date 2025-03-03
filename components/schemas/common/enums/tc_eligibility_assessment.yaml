@@ -1,12 +1,12 @@
 type: string
 enum:
-  - "NoResponse"
-  - "Proceed"
-  - "Discuss"
-  - "DontProceed"
+  - "NO_RESPONSE"
+  - "PROCEED"
+  - "DISCUSS"
+  - "DONT_PROCEED"
 x-enum-varnames:
-  - "NoResponse"
-  - "Proceed"
-  - "Discuss"
-  - "DontProceed"
-example: "Proceed"
+  - "NO_RESPONSE"
+  - "PROCEED"
+  - "DISCUSS"
+  - "DONT_PROCEED"
+example: "PROCEED"

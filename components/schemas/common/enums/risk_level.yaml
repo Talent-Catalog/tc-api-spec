@@ -1,12 +1,12 @@
 type: string
 enum:
-  - "NoResponse"
-  - "Low"
-  - "Medium"
-  - "High"
+  - "NO_RESPONSE"
+  - "LOW"
+  - "MEDIUM"
+  - "HIGH"
 x-enum-varnames:
-  - "NoResponse"
-  - "Low"
-  - "Medium"
-  - "High"
-example: "Low"
+  - "NO_RESPONSE"
+  - "LOW"
+  - "MEDIUM"
+  - "HIGH"
+example: "LOW"

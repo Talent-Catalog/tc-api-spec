@@ -1,10 +1,10 @@
 type: string
 enum:
-  - "male"
-  - "female"
-  - "other"
+  - "MALE"
+  - "FEMALE"
+  - "OTHER"
 x-enum-varnames:
-  - "male"
-  - "female"
-  - "other"
-example: "other"
+  - "MALE"
+  - "FEMALE"
+  - "OTHER"
+example: "OTHER"
