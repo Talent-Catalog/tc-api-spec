@@ -3,7 +3,7 @@ get:
   description: Fetches a paginated array of anonymised candidates. Optionally filter candidates by their ISCO (International Standard Classification of Occupations) codes.
   tags:
     - Candidates
-  operationId: getAllCandidates
+  operationId: findCandidates
   parameters:
     - name: page
       in: query
@@ -11,8 +11,8 @@ get:
       required: false
       schema:
         type: integer
-        default: 1
-        minimum: 1
+        default: 0
+        minimum: 0
     - name: limit
       in: query
       description: The number of results per page
@@ -22,13 +22,6 @@ get:
         default: 10
         minimum: 1
         maximum: 100
-    - name: occupation
-      in: query
-      description: A list of ISCO codes to filter candidates by their occupations. Provide one or more ISCO codes as a comma-separated list (e.g., `1234,5678`).
-      required: false
-      schema:
-        type: string
-        example: "1234,5678"
     - name: location
       in: query
       description: A list of ISO 3166-1 alpha-2 location codes to filter candidates by their current location. Provide one or more ISO codes as a comma-separated list (e.g., `US,GB`).
@@ -43,6 +36,13 @@ get:
       schema:
         type: string
         example: "FR,DE"
+    - name: occupation
+      in: query
+      description: A list of ISCO codes to filter candidates by their occupations. Provide one or more ISCO codes as a comma-separated list (e.g., `1234,5678`).
+      required: false
+      schema:
+        type: string
+        example: "1234,5678"
   responses:
     '200':
       description: A page of anonymised candidates

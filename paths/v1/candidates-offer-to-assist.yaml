@@ -16,17 +16,7 @@ post:
               type: array
               description: A list of candidate public IDs and optional coupon codes.
               items:
-                type: object
-                properties:
-                  publicId:
-                    type: string
-                    format: base64-uuid
-                    description: The unique public ID of the candidate.
-                    example: "ABcd2EFgHIjkLMNOp3QR-S"
-                  couponCode:
-                    type: string
-                    description: An optional coupon code that the candidate may use for service access.
-                    example: "COUPON2025"
+                $ref: "../../components/schemas/v1/CandidateCoupon.yaml"
             serviceProviderId: # todo depending on the api security method, this may not be required
               type: string
               description: The unique identifier of the employer, recruiter or candidate service provider

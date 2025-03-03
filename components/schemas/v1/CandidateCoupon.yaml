@@ -1,0 +1,14 @@
+type: object
+description: A candidate plus an optional coupon - used in offer to assist services
+properties:
+  publicId:
+    type: string
+    format: base64-uuid
+    description: The unique public ID of the candidate.
+    example: "ABcd2EFgHIjkLMNOp3QR-S"
+  couponCode:
+    type: string
+    description: An optional coupon code that the candidate may use for service access.
+    example: "COUPON2025"
+required:
+  - publicId
