@@ -45,7 +45,7 @@ This installs the OpenAPI CLI tool globally on your system, allowing you to use 
 To preview the API documentation rendered with ReDoc, start a local server:
 
 ```bash
-openapi preview-docs ./openapi.yaml
+openapi preview-docs ./openapi.yaml --port 9090
 ```
 
 This command will start a local web server where you can view a rendered version of the API 
