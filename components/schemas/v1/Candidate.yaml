@@ -445,10 +445,6 @@ allOf:
         description: Date when the candidate was created.
         allOf:
           - $ref: ../common/iso_timestamp.yaml
-      updatedDate:
-        description: Date when the candidate was last updated.
-        allOf:
-          - $ref: ../common/iso_timestamp.yaml
 
     required:
       - id
