@@ -12,7 +12,8 @@ info:
     name: Gnu Affero General Public License
     url: https://www.gnu.org/licenses/agpl-3.0.html
   x-logo:
-    url: ./assets/tc-logo.png
+#    url: ./assets/tc-logo.png
+    url: https://raw.githubusercontent.com/Talent-Catalog/tc-api-spec/refs/heads/staging/assets/tc-logo.png
     altText: Talent Catalog logo
 
 tags:
