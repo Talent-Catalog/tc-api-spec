@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Anonymised Candidate Data API
+  title: Talent Catalog API
   description: Talent Catalog API specification for accessing anonymised candidate data.
   version: 1.0.0
   termsOfService: https://tctalent.org/terms
