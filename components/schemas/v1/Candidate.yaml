@@ -447,4 +447,4 @@ allOf:
           - $ref: ../common/iso_timestamp.yaml
 
     required:
-      - id
+      - publicId
