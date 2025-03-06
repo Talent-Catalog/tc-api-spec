@@ -6,7 +6,7 @@ info:
   termsOfService: https://tctalent.org/terms
   contact:
     name: Talent Catalog API Support
-    url: https://github.com/Talent-Catalog/tc-api-spec/issues
+    url: https://github.com/Talent-Catalog/tc-api-spec
     email: support@talentcatalog.net
   license:
     name: Gnu Affero General Public License
