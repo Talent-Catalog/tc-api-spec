@@ -1,0 +1,5 @@
+theme:
+  navbar:
+    logo:
+      url: ./assets/tc-logo.png
+      altText: Talent Catalog logo
