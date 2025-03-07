@@ -2,13 +2,13 @@ type: object
 properties:
   isoCode:
     type: string
-    description: The ISO code for the candidate's language.
+    description: The ISO code for the language.
     example: "en"
   name:
     type: string
-    description: The name of the candidate's language.
+    description: The name of the language.
     example: "English"
   status:
     type: string
-    description: The status of the candidate's language.
+    description: The status of the language.
     example: "Active"
