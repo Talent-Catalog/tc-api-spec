@@ -22,7 +22,7 @@ properties:
     description: The stage of the job opportunity.
     allOf:
       - $ref: ../common/enums/job_opportunity_stage.yaml
-    example: "visaPreparation"
+    example: "VISA_PREPARATION"
   submissionDueDate:
     type: string
     format: date

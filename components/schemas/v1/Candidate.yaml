@@ -73,7 +73,7 @@ allOf:
         description: Indicates whether the candidate has participated in a conflict.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-        example: "No"
+        example: "NO"
       conflictNotes:
         type: string
         description: Notes related to the candidate's conflict participation.
@@ -112,7 +112,7 @@ allOf:
         description: Destination limits for the candidate.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-        example: "No"
+        example: "NO"
       destLimitNotes:
         type: string
         description: Notes related to the candidate's destination limits.
@@ -164,7 +164,7 @@ allOf:
         description: Indicates whether the candidate has health issues.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-        example: "No"
+        example: "NO"
       healthIssuesNotes:
         type: string
         description: Notes related to the candidate's health issues.
@@ -248,7 +248,7 @@ allOf:
         description: Indicates whether the candidate is wanted for military service.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       militaryStart:
         type: string
         format: date
@@ -292,7 +292,7 @@ allOf:
         items:
           type: integer
           format: int64
-        example: "1"
+        example: "[1,2]"
       partnerEduLevel:
         description: Education level of the candidate's partner.
         allOf:
@@ -334,7 +334,7 @@ allOf:
         description: Indicates whether the candidate has returned home.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       returnedHomeReason:
         type: string
         description: Reason for the candidate's return home.
@@ -351,7 +351,7 @@ allOf:
         description: Indicates whether the candidate plans to return home in the future.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       resettleThird:
         description: Indicates whether the candidate has ever applied for resettlement or emigration to a 3rd country.
         allOf:
@@ -392,12 +392,12 @@ allOf:
         description: Indicates whether the candidate is registered with UNRWA.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       visaIssues:
         description: Indicates whether the candidate has had visa issues.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       visaIssuesNotes:
         type: string
         description: Notes related to the candidate's visa issues.
@@ -406,7 +406,7 @@ allOf:
         description: Indicates whether the candidate has had a visa application rejected.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       visaRejectNotes:
         type: string
         description: Notes related to the candidate's visa application rejection.
