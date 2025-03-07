@@ -1,6 +1,5 @@
 logo:
-  image: ./assets/TCLogo2.png
+  image: ./assets/tc-logo-2.png
   altText: Talent Catalog logo
-
-#  link: "https://example.com"
-#  favicon: ./assets/favicon-example.svg
+#  link: "https://talentcatalog.net"
+  favicon: ./assets/tc-favicon.svg
