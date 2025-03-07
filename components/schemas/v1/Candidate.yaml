@@ -103,7 +103,7 @@ allOf:
         description: Indicates whether the candidate has a criminal conviction.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       crimeConvictNotes:
         type: string
         description: Notes related to the candidate's criminal conviction.
@@ -292,7 +292,7 @@ allOf:
         items:
           type: integer
           format: int64
-        example: "[1,2]"
+        example: [1,2]
       partnerEduLevel:
         description: Education level of the candidate's partner.
         allOf:
