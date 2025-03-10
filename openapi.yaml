@@ -26,8 +26,12 @@ info:
 
     ### Authentication:
     The Talent Catalog API uses API Key Authentication.
+    
     Each request must include an `X-API-Key` header with your API key.
-    Contact us to register for an API key.
+    
+    ### Getting Started
+    - Contact us to register for an API key.
+    - Use the endpoints below to interact with the API.
 
 
   version: 1.0.0
