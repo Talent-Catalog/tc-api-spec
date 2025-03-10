@@ -23,15 +23,14 @@ info:
     - Post job matches: Match candidates with relevant job opportunities.
     - Post assistance service matches: Match candidates with relevant assistance services that can 
     help them in their career or relocation.
-    - Register new candidates: Submit new candidate registrations directly to the Talent Catalog 
-    (TC) database.
+    - Register new candidates: Submit new candidate registrations directly to the TC database.
 
     ### Authentication
     The Talent Catalog API uses **API Key Authentication**.  
     - Contact us for an API key and include it in the request header named `X-API-Key`.
 
     ### Rate Limits
-    For consistent API performance and fair use, the API enforces a rate limit of:
+    For API performance and fair use, the API enforces a rate limit of:
     - **1,000 requests per hour** per API key.
     - If you exceed this limit, you will receive a `429 Too Many Requests` response.
     - Rate limit status is returned in the response headers:
