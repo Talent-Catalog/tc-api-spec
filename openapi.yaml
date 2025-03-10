@@ -60,7 +60,7 @@ info:
 
 tags:
   - name: Candidates
-    description: Operations related to anonymised candidates
+    description: Operations related to anonymised candidates.
 
 servers:
   - url: https://tctalent.org/ads
