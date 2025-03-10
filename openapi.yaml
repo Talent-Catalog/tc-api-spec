@@ -7,7 +7,7 @@ info:
     
     The Talent Catalog API allows third-party systems to connect to the TC platform.
     
-    ### Key Features:
+    ### Key Features
     The Talent Catalog API offers the following capabilities:
     - **Search Candidate Profiles**: Retrieve anonymised candidate data from the TC database.
     - **Filter Search Results**: Find candidates based on various criteria (e.g. location, 
@@ -16,7 +16,7 @@ info:
     - **Post Service Matches**: Connect candidate profiles with appropriate support services.
     - **Register Candidates**: Add new candidate registrations directly to the TC database.
 
-    ### Authentication:
+    ### Authentication
     The Talent Catalog API uses API Key Authentication.
     
     Each request must include an `X-API-Key` header with your API key.
