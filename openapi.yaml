@@ -31,7 +31,7 @@ info:
     - Contact us for an API key and include it in the request header named `X-API-Key`.
 
     ### Rate Limits
-    To maintain consistent API performance and fair use, the API enforces a rate limit of:
+    For consistent API performance and fair use, the API enforces a rate limit of:
     - **1,000 requests per hour** per API key.
     - If you exceed this limit, you will receive a `429 Too Many Requests` response.
     - Rate limit status is returned in the response headers:
@@ -40,10 +40,9 @@ info:
       - `X-RateLimit-Reset`: The time at which the rate limit resets.
 
     ### Getting Started
-    - Familiarise yourself with the endpoints below and test them out against our mock server.
-    - Contact us to register for an API key for the relevant endpoints.
-    - Use the endpoints with your system to search anonymised candidate profiles, register 
-    candidates, post job matches, and post assistance service matches.
+    - Contact us to register for an API key.
+    - Use the endpoints below to search anonymised candidate profiles, post job matches, post 
+    assistance service matches, and register candidates. 
 
 
   version: 1.0.0
