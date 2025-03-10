@@ -3,7 +3,7 @@ info:
   title: Talent Catalog API
   description: |
     The Talent Catalog (TC) is a purpose-built platform designed to connect skilled displaced 
-    populations with international job opportunities and to refugee-focused support services.
+    populations with international job opportunities and refugee-focused support services.
     
     The Talent Catalog API allows third-party systems to connect to the TC platform.
     
