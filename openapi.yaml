@@ -16,32 +16,18 @@ info:
     markets and making it possible for all displaced individuals to easily connect with humanitarian 
     and employment-related support networks.
     
-    ### Key Features
-    - Access anonymized candidate data: Retrieve anonymized candidate profiles from the TC database.
-    - Filter and search: Find candidates based on various criteria (e.g. location, occupation, or 
-    nationality).
-    - Post job matches: Match candidates with relevant job opportunities.
-    - Post assistance service matches: Match candidates with relevant assistance services that can 
-    help them in their career or relocation.
-    - Register new candidates: Submit new candidate registrations directly to the TC database.
+    ### Key Features:
+    - **Search Candidate Profiles**: Retrieve anonymised candidate data from the TC database.
+    - **Filter Search Results**: Find candidates based on various criteria (e.g. location, 
+    occupation, or nationality).    
+    - **Register Candidates**: Submit new candidate registrations directly to the TC database.
+    - **Post Job Matches**: Match candidate profiles with job opportunities.
+    - **Post Service Matches**: Match candidate profiles with assistance services.
 
-    ### Authentication
-    The Talent Catalog API uses **API Key Authentication**.  
-    - Contact us for an API key and include it in the request header named `X-API-Key`.
-
-    ### Rate Limits
-    For API performance and fair use, the API enforces a rate limit of:
-    - **1,000 requests per hour** per API key.
-    - If you exceed this limit, you will receive a `429 Too Many Requests` response.
-    - Rate limit status is returned in the response headers:
-      - `X-RateLimit-Limit`: The maximum number of requests allowed per hour.
-      - `X-RateLimit-Remaining`: The number of requests remaining in the current time window.
-      - `X-RateLimit-Reset`: The time at which the rate limit resets.
-
-    ### Getting Started
-    - Contact us to register for an API key.
-    - Use the endpoints below to search anonymised candidate profiles, post job matches, post 
-    assistance service matches, and register candidates. 
+    ### Authentication:
+    The Talent Catalog API uses API Key Authentication.
+    Each request must include an `X-API-Key` header with your API key.
+    Contact us to register for an API key.
 
 
   version: 1.0.0
