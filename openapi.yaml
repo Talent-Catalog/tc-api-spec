@@ -3,22 +3,23 @@ info:
   title: Talent Catalog API
   description: |
     The Talent Catalog (TC) is a purpose-built platform designed to connect skilled displaced 
-    populations with international job opportunities while also facilitating access to critical 
-    refugee-focused support services. Originally launched in 2016, the open-sourced platform has 
-    undergone multiple rounds of user-driven enhancements, meaning that its development has always 
-    been informed by the lived experiences and needs of refugees. 
+    populations with international job opportunities and facilitate access to refugee-focused 
+    support services. Originally launched in 2016, the open-sourced platform has undergone multiple 
+    rounds of user-driven enhancements, meaning that its development has always been informed by the 
+    lived experiences and needs of refugees. 
     
     Despite possessing valuable skills and experience, displaced individuals often face significant 
     barriers to securing international employment, including bureaucratic restrictions, lack of 
     direct employer engagement, and limited visibility in global talent markets. At the same time, 
     many struggle to navigate the fragmented landscape of refugee support services. The Talent 
     Catalog API seeks to address both of these challenges—connecting skilled refugees to global job 
-    markets and making it possible for all displaced individuals to easily connect with vital 
-    humanitarian and employment-related support networks.
+    markets and making it possible for all displaced individuals to easily connect with humanitarian 
+    and employment-related support networks.
     
     ### Key Features
-    - Access anonymized candidate data
-    - Filter and search based on various criteria (e.g. location, occupation, or nationality).
+    - Access anonymized candidate data: Retrieve anonymized candidate profiles from the TC database.
+    - Filter and search: Find candidates based on various criteria (e.g. location, occupation, or 
+    nationality).
     - Post job matches: Match candidates with relevant job opportunities.
     - Post assistance service matches: Match candidates with relevant assistance services that can 
     help them in their career or relocation.
