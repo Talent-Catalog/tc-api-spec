@@ -12,9 +12,9 @@ info:
     - **Search Candidate Profiles**: Retrieve anonymised candidate data from the TC database.
     - **Filter Search Results**: Find candidates based on various criteria (e.g. location, 
     occupation, or nationality).
-    - **Register Candidates**: Submit new candidate registrations directly to the TC database.
     - **Post Job Matches**: Match candidate profiles with relevant employment opportunities.
     - **Post Service Matches**: Connect candidate profiles with appropriate support services.
+    - **Register Candidates**: Add new candidate registrations directly to the TC database.
 
     ### Authentication:
     The Talent Catalog API uses API Key Authentication.
