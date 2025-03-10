@@ -1,13 +1,56 @@
 openapi: 3.0.3
 info:
   title: Talent Catalog API
-  description: Talent Catalog API specification for accessing anonymised candidate data.
+  description: |
+    The Talent Catalog (TC) is a purpose-built platform designed to connect skilled displaced 
+    populations with international job opportunities while also facilitating access to critical 
+    refugee-focused support services. Originally launched in 2016, the open-sourced platform has 
+    undergone multiple rounds of user-driven enhancements, meaning that its development has always 
+    been informed by the lived experiences and needs of refugees. 
+    
+    Despite possessing valuable skills and experience, displaced individuals often face significant 
+    barriers to securing international employment, including bureaucratic restrictions, lack of 
+    direct employer engagement, and limited visibility in global talent markets. At the same time, 
+    many struggle to navigate the fragmented landscape of refugee support services. The Talent 
+    Catalog API seeks to address both of these challenges—connecting skilled refugees to global job 
+    markets and making it possible for all displaced individuals to easily connect with vital 
+    humanitarian and employment-related support networks.
+    
+    ### Key Features
+    - Access anonymized candidate data
+    - Filter and search based on various criteria (e.g. location, occupation, or nationality).
+    - Post job matches: Match candidates with relevant job opportunities.
+    - Post assistance service matches: Match candidates with relevant assistance services that can 
+    help them in their career or relocation.
+    - Register new candidates: Submit new candidate registrations directly to the Talent Catalog 
+    (TC) database.
+
+    ### Authentication
+    The Talent Catalog API uses **API Key Authentication**.  
+    - Contact us for an API key and include it in the request header named `X-API-Key`.
+
+    ### Rate Limits
+    To maintain consistent API performance and fair use, the API enforces a rate limit of:
+    - **1,000 requests per hour** per API key.
+    - If you exceed this limit, you will receive a `429 Too Many Requests` response.
+    - Rate limit status is returned in the response headers:
+      - `X-RateLimit-Limit`: The maximum number of requests allowed per hour.
+      - `X-RateLimit-Remaining`: The number of requests remaining in the current time window.
+      - `X-RateLimit-Reset`: The time at which the rate limit resets.
+
+    ### Getting Started
+    - Familiarise yourself with the endpoints below and test them out against our mock server.
+    - Contact us to register for an API key for the relevant endpoints.
+    - Use the endpoints with your system to search anonymised candidate profiles, register 
+    candidates, post job matches, and post assistance service matches.
+
+
   version: 1.0.0
   termsOfService: https://tctalent.org/terms
   contact:
     name: Talent Catalog API Support
     url: https://github.com/Talent-Catalog/tc-api-spec
-    email: support@talentcatalog.net
+    email: api@talentcatalog.net
   license:
     name: Gnu Affero General Public License
     url: https://www.gnu.org/licenses/agpl-3.0.html
