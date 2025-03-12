@@ -17,20 +17,16 @@ post:
               description: A list of candidate public IDs and optional coupon codes.
               items:
                 $ref: "../../components/schemas/v1/CandidateCoupon.yaml"
-            serviceProviderId: # todo depending on the api security method, this may not be required
-              type: string
-              description: The unique identifier of the employer, recruiter or candidate service provider
-              example: "employer-12345"
             reason:
               type: string
               description: The reason for expressing interest in the candidate
               allOf:
                 - $ref: ../../components/schemas/common/enums/candidate_assistance_type.yaml
-              example: "JobOpportunity"
+              example: "EDUCATION_SERVICE"
             additionalNotes:
               type: string
-              description: Optional additional notes provided by the employer, recruiter or candidate service provider
-              example: "Candidate's experience aligns with our job requirements. We would like to arrange an interview at the earliest convenience."
+              description: Optional additional notes provided by the candidate service provider
+              example: "We would like to provide our services to these candidates."
   responses:
     '201':
       description: Successfully expressed interest in the candidate

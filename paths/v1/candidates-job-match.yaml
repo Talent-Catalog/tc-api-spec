@@ -23,10 +23,6 @@ post:
                     format: base64-uuid
                     description: The unique public ID of the candidate.
                     example: "ABcd2EFgHIjkLMNOp3QR-S"
-            serviceProviderId: # todo depending on the api security method, this may not be required
-              type: string
-              description: The unique identifier of the employer or recruiter
-              example: "employer-12345"
             additionalNotes:
               type: string
               description: Optional additional notes provided by the employer or recruiter
