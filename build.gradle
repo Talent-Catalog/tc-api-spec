@@ -29,9 +29,6 @@ configurations {
 
 // Repositories: Define where dependencies should be resolved from
 repositories {
-    // Use mavenLocal() for local iterative spec and service development
-    // See: https://github.com/Talent-Catalog/tc-api/wiki/OpenAPI-Spec-Dependency
-    // mavenLocal()
     mavenCentral()
 }
 
