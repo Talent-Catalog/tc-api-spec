@@ -1,3 +1,5 @@
+import io. github. zenhelix. gradle. plugin. extension. PublishingType
+
 // Gradle plugins required for the build
 plugins {
     id 'java'
@@ -5,7 +7,12 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.6'
     id 'org.openapi.generator' version '7.8.0'
     id 'maven-publish'
-    id 'tech.medivh.plugin.publisher' version '1.2.1'
+//    id 'org.jreleaser' version '1.17.0'
+//    id 'tech.medivh.plugin.publisher' version '1.2.1'
+    id 'signing'
+//    id("com.tddworks.central-portal-publisher") version "0.0.5"
+//    id("com.moengage.plugin.maven.publish") version "0.0.2"
+    id("io.github.zenhelix.maven-central-publish") version "0.5.0"
 }
 
 // Project metadata: Group and version details
@@ -103,32 +110,185 @@ jar {
     }
 }
 
-medivhPublisher {
-    groupId = project.group.toString()
-    artifactId = project.name
-    version = project.version.toString()
-    pom {
-        name = "tc-api-spec"
-        description = "OpenAPI generated models and API for TC services"
-        url = "https://github.com/Talent-Catalog/tc-api-spec.git"
-        licenses {
-            license {
-                name = "GNU Affero General Public License, Version 3"
-                url = "https://www.gnu.org/licenses/agpl-3.0.html#license-text"
+// Get properties from environment variables
+//if (System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_USERNAME=")) {
+//    project.ext["sonatypeUser"] = System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_USERNAME=")
+//}
+//if (System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_PASSWORD=")) {
+//    project.ext["sonatypePassword"] = System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_PASSWORD=")
+//}
+
+//if (System.getenv("SIGNING_KEY_ID")) {
+//    project.ext["signing.keyId"] = System.getenv("SIGNING_KEY_ID")
+//}
+//if (System.getenv("SIGNING_SECRET_KEY")) {
+//    project.ext["signing.secretKey"] = System.getenv("SIGNING_SECRET_KEY")
+//}
+//if (System.getenv("SIGNING_PASSWORD")) {
+//    project.ext["signing.password"] = System.getenv("SIGNING_PASSWORD")
+//}
+
+publishing {
+    repositories {
+        mavenCentralPortal {
+            credentials {
+                username = System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_USERNAME") ?: ""
+                password = System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_PASSWORD") ?: ""
             }
+            publishingType = PublishingType.USER_MANAGED
+            baseUrl = "https://central.sonatype.com"
+//            deploymentName = "some-name"
         }
-        developers {
-            developer {
-                id = "sadatmalik"
-                name = "Sadat Malik"
-                email = "sadat.malik@talentcatalog.org"
+    }
+
+    publications {
+        maven(MavenPublication) {
+            from(components["java"])
+            pom {
+                name = 'tc-api-spec'
+                description = 'OpenAPI generated models and API for TC services'
+                url = 'https://github.com/Talent-Catalog/tc-api-spec.git'
+                inceptionYear = '2024'
+                licenses {
+                    license {
+                        name = 'GNU Affero General Public License, Version 3'
+                        url = 'https://www.gnu.org/licenses/agpl-3.0.html#license-text'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'sadatmalik'
+                        name = 'Sadat Malik'
+                        email = "sadat.malik@talentcatalog.net"
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/Talent-Catalog/tc-api-spec.git'
+                    developerConnection = 'scm:git:ssh://github.com/Talent-Catalog/tc-api-spec.git'
+                    url = 'https://github.com/Talent-Catalog/tc-api-spec.git'
+                }
             }
-        }
-        scm {
-            connection = "scm:git:git://github.com/Talent-Catalog/tc-api-spec.git"
-            url = "https://github.com/Talent-Catalog/tc-api-spec.git"
         }
     }
 }
 
+// Set signing properties from environment variables if they exist
+if (System.getenv("GPG_SIGNING_KEY_ID")) {
+    project.ext["signing.keyId"] = System.getenv("GPG_SIGNING_KEY_ID")
+}
+if (System.getenv("GPG_SIGNING_PASSWORD")) {
+    project.ext["signing.password"] = System.getenv("GPG_SIGNING_PASSWORD")
+}
+if (System.getenv("JRELEASER_GPG_SECRET_KEY=")) {
+    project.ext["signing.key"] = System.getenv("JRELEASER_GPG_SECRET_KEY")
+}
 
+// Set the secret key file path
+//project.ext["signing.secretKeyRingFile"] = "./secring.gpg"
+
+def signingKeyId = System.getenv("GPG_SIGNING_KEY_ID") ?: project.findProperty("signing.keyId")
+def signingKey = System.getenv("JRELEASER_GPG_SECRET_KEY") ?: project.findProperty("signing.secretKey")
+def signingPassword = System.getenv("GPG_SIGNING_PASSWORD") ?: project.findProperty("signing.password")
+
+signing {
+    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+    sign(publishing.publications)
+}
+
+//sonatypePortalPublisher {
+//    settings {
+//        autoPublish = false
+//        aggregation = false
+//    }
+//}
+
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId = project.group.toString()
+//            artifactId = project.name
+//            version = project.version.toString()
+//            from components.java
+//            pom {
+//                name = 'tc-api-spec'
+//                description = 'OpenAPI generated models and API for TC services'
+//                url = 'https://github.com/Talent-Catalog/tc-api-spec.git'
+//                inceptionYear = '2024'
+//                licenses {
+//                    license {
+//                        name = 'GNU Affero General Public License, Version 3'
+//                        url = 'https://www.gnu.org/licenses/agpl-3.0.html#license-text'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id = 'sadatmalik'
+//                        name = 'Sadat Malik'
+//                        email = "sadat.malik@talentcatalog.net"
+//                    }
+//                }
+//                scm {
+//                    connection = 'scm:git:git://github.com/Talent-Catalog/tc-api-spec.git'
+//                    developerConnection = 'scm:git:ssh://github.com/Talent-Catalog/tc-api-spec.git'
+//                    url = 'https://github.com/Talent-Catalog/tc-api-spec.git'
+//                }
+//            }
+//        }
+//    }
+//
+////    repositories {
+////        maven {
+////            url = layout.buildDirectory.dir('staging-deploy')
+////        }
+////    }
+//}
+//
+//jreleaser {
+//    signing {
+//        active = 'ALWAYS'
+//        armored = true
+//    }
+//    deploy {
+//        maven {
+//            mavenCentral {
+//                sonatype {
+//                    active = 'ALWAYS'
+//                    url = 'https://central.sonatype.com/api/v1/publisher'
+//                    stagingRepository(file('/').absolutePath)
+////                    stagingDirectories = ['target/staging']
+//                }
+//            }
+//        }
+//    }
+//}
+
+
+//medivhPublisher {
+//    groupId = project.group.toString()
+//    artifactId = project.name
+//    version = project.version.toString()
+//    pom {
+//        name = "tc-api-spec"
+//        description = "OpenAPI generated models and API for TC services"
+//        url = "https://github.com/Talent-Catalog/tc-api-spec.git"
+//        licenses {
+//            license {
+//                name = "GNU Affero General Public License, Version 3"
+//                url = "https://www.gnu.org/licenses/agpl-3.0.html#license-text"
+//            }
+//        }
+//        developers {
+//            developer {
+//                id = "sadatmalik"
+//                name = "Sadat Malik"
+//                email = "sadat.malik@talentcatalog.net"
+//            }
+//        }
+//        scm {
+//            connection = "scm:git:git://github.com/Talent-Catalog/tc-api-spec.git"
+//            url = "https://github.com/Talent-Catalog/tc-api-spec.git"
+//        }
+//    }
+//}
+//
+//
