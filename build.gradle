@@ -1,0 +1,137 @@
+// Gradle plugins required for the build
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.openapi.generator' version '7.8.0'
+    id 'maven-publish'
+    id 'tech.medivh.plugin.publisher' version '1.2.1'
+}
+
+// Project metadata: Group and version details
+// todo we will publish to org.tctalent once the namespace has been setup and verified on Maven central
+//group = 'org.tctalent'
+group = 'io.github.sadatmalik'
+version = '1.0.1'
+
+// Java toolchain configuration
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+// Dependency configurations: Manage custom configurations
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+// Repositories: Define where dependencies should be resolved from
+repositories {
+    // Use mavenLocal() for local iterative spec and service development
+    // See: https://github.com/Talent-Catalog/tc-api/wiki/OpenAPI-Spec-Dependency
+    // mavenLocal()
+    mavenCentral()
+}
+
+// Project-wide variables: Manage dependency versions
+ext {
+    lombokMapstructBindingVersion = "0.2.0"
+}
+
+// Project dependencies
+dependencies {
+    // Spring Boot starters
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
+    // Lombok
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+
+    // For OpenAPI 3.0 code generation - todo check if their are curated versions, if not move versions to ext
+    implementation "io.swagger.core.v3:swagger-annotations:2.2.8"
+    implementation "io.swagger.core.v3:swagger-models:2.2.8"
+    implementation "jakarta.validation:jakarta.validation-api:3.0.2"
+
+}
+
+// OpenAPI generation task: Generate API and model classes from the OpenAPI spec
+openApiGenerate {
+    generatorName.set("spring")
+    inputSpec.set(file("${projectDir}/openapi.yaml").absolutePath)
+    outputDir.set("$buildDir/generated")
+    apiPackage.set("org.tctalent.anonymization.api")
+    modelPackage.set("org.tctalent.anonymization.model")
+    configOptions.put("dateLibrary", "java8")
+    configOptions.put("openApiNullable", "false")
+    configOptions.put("useJakartaEe", "true")
+    configOptions.put("useLombokAnnotations", "true")
+    configOptions.put("additionalModelTypeAnnotations", "@lombok.Getter @lombok.Setter")
+    configOptions.put("generateBuilders", "true")
+    library.set("spring-boot")
+    globalProperties.set([
+            modelDocs: "false",
+            apiDocs: "false",
+            apiTests: "false",
+            modelTests: "false",
+            generateAliasAsModel: "true"
+    ])
+    // Pick up custom templates - e.g. for custom enum code generation:
+    templateDir.set(file("${projectDir}/custom-templates/JavaSpring").absolutePath)
+}
+
+// Clean-up task: Remove unnecessary generated files
+tasks.named("openApiGenerate").configure {
+    doLast {
+        def generatedMainClass = file("$buildDir/generated/src/main/java/org/openapitools/OpenApiGeneratorApplication.java")
+        if (generatedMainClass.exists()) {
+            generatedMainClass.delete()
+        }
+    }
+}
+
+// Include generated sources in the main source set
+sourceSets {
+    main {
+        java {
+            srcDir "$buildDir/generated/src/main/java"
+        }
+    }
+}
+
+jar {
+    from("$buildDir/generated/src/main/java") {
+        include '**/*.java'
+    }
+}
+
+medivhPublisher {
+    groupId = project.group.toString()
+    artifactId = project.name
+    version = project.version.toString()
+    pom {
+        name = "tc-api-spec"
+        description = "OpenAPI generated models and API for TC services"
+        url = "https://github.com/Talent-Catalog/tc-api-spec.git"
+        licenses {
+            license {
+                name = "GNU Affero General Public License, Version 3"
+                url = "https://www.gnu.org/licenses/agpl-3.0.html#license-text"
+            }
+        }
+        developers {
+            developer {
+                id = "sadatmalik"
+                name = "Sadat Malik"
+                email = "sadat.malik@talentcatalog.org"
+            }
+        }
+        scm {
+            connection = "scm:git:git://github.com/Talent-Catalog/tc-api-spec.git"
+            url = "https://github.com/Talent-Catalog/tc-api-spec.git"
+        }
+    }
+}
+
+
