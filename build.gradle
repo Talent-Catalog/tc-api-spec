@@ -110,8 +110,8 @@ publishing {
     repositories {
         mavenCentralPortal {
             credentials {
-                username = System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_USERNAME") ?: ""
-                password = System.getenv("JRELEASER_MAVENCENTRAL_SONATYPE_PASSWORD") ?: ""
+                username = System.getenv("SONATYPE_USERNAME") ?: ""
+                password = System.getenv("SONATYPE_PASSWORD") ?: ""
             }
             publishingType = PublishingType.USER_MANAGED
             baseUrl = "https://central.sonatype.com"
@@ -153,7 +153,7 @@ publishing {
 }
 
 def signingKeyId = System.getenv("GPG_SIGNING_KEY_ID") ?: project.findProperty("signing.keyId")
-def signingKey = System.getenv("JRELEASER_GPG_SECRET_KEY") ?: project.findProperty("signing.secretKey")
+def signingKey = System.getenv("GPG_SECRET_KEY") ?: project.findProperty("signing.secretKey")
 def signingPassword = System.getenv("GPG_SIGNING_PASSWORD") ?: project.findProperty("signing.password")
 
 signing {
