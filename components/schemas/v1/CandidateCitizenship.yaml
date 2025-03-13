@@ -14,7 +14,3 @@ properties:
   nationality:
     description: The country of citizenship of the candidate.
     $ref: ./Country.yaml
-  notes:
-    type: string
-    description: Additional notes about the candidate's citizenship.
-    example: "Candidate has dual citizenship."
