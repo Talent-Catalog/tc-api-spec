@@ -100,12 +100,6 @@ sourceSets {
     }
 }
 
-jar {
-    from("$buildDir/generated/src/main/java") {
-        include '**/*.java'
-    }
-}
-
 publishing {
     repositories {
         mavenCentralPortal {
