@@ -76,10 +76,6 @@ properties:
     description: Survey type associated with the candidate.
     allOf:
       - $ref: ./SurveyType.yaml
-  surveyComment:
-    type: string
-    description: Comment associated with the survey.
-    example: "Survey comment"
   unhcrConsent:
     description: Indicates whether the candidate has given consent for UNHCR to be notified that they have registered on the Talent Catalog.
     allOf:
