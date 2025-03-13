@@ -15,11 +15,3 @@ allOf:
         type: string
         description: The registration number of the dependant.
         example: "12345678"
-      registeredNotes:
-        type: string
-        description: Notes about the dependant's registration.
-        example: "Registration in process with local UNHCR office"
-      healthNotes:
-        type: string
-        description: Notes about the dependant's health.
-        example: "Allergies to peanuts"
