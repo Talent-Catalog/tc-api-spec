@@ -25,7 +25,7 @@ properties:
     description: Meets security risk assessment for the visa.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-    example: "No"
+    example: "NO"
   overallRisk:
     description: The overall risk assessment status for the visa.
     allOf:
@@ -42,7 +42,7 @@ properties:
     description: The closest relative of the candidate in the destination country (if exists).
     allOf:
       - $ref: ../common/enums/family_relations.yaml
-    example: "Sibling"
+    example: "SIBLING"
   candidateVisaJobChecks:
     type: array
     description: The job checks for the candidate's visa.

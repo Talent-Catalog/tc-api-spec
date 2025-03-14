@@ -26,4 +26,4 @@ properties:
     description: Any health concerns for the dependant.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-    example: "No"
+    example: "NO"

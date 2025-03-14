@@ -1,13 +1,37 @@
 openapi: 3.0.3
 info:
-  title: Anonymised Candidate Data API
-  description: Talent Catalog API specification for accessing anonymised candidate data.
+  title: Talent Catalog API
+  description: |
+    The Talent Catalog (TC) is a purpose-built platform designed to connect skilled displaced 
+    populations with international job opportunities and refugee-focused support services.
+    
+    The Talent Catalog API allows third-party systems to connect to the TC platform.
+    
+    ### Key Features
+    The Talent Catalog API offers the following capabilities:
+    - **Search Candidate Profiles**: Retrieve anonymised candidate data from the TC database.
+    - **Filter Search Results**: Find candidates based on various criteria (e.g. location, 
+    occupation, or nationality).
+    - **Post Job Matches**: Match candidate profiles with relevant employment opportunities.
+    - **Post Service Matches**: Connect candidate profiles with appropriate support services.
+    - **Register Candidates**: Add new candidate registrations directly to the TC database.
+
+    ### Authentication
+    The Talent Catalog API uses API Key Authentication.
+    
+    Each request must include an `X-API-Key` header with your API key.
+    
+    ### Getting Started
+    - Contact us to register for an API key.
+    - Use the endpoints below to interact with the API.
+
+
   version: 1.0.0
   termsOfService: https://tctalent.org/terms
   contact:
     name: Talent Catalog API Support
-    url: https://github.com/Talent-Catalog/tc-api-spec/issues
-    email: support@talentcatalog.net
+    url: https://github.com/Talent-Catalog/tc-api-spec
+    email: api@talentcatalog.net
   license:
     name: Gnu Affero General Public License
     url: https://www.gnu.org/licenses/agpl-3.0.html
@@ -17,7 +41,7 @@ info:
 
 tags:
   - name: Candidates
-    description: Operations related to anonymised candidates
+    description: Operations related to anonymised candidates.
 
 servers:
   - url: https://tctalent.org/ads
@@ -31,7 +55,7 @@ paths:
   /v1/candidates/{publicId}:
     $ref: ./paths/v1/candidates-publicId.yaml
   /v1/candidates/job-match:
-    $ref: "./paths/v1/candidates-job-match.yaml"
+    $ref: ./paths/v1/candidates-job-match.yaml
   /v1/candidates/offer-to-assist:
     $ref: ./paths/v1/candidates-offer-to-assist.yaml
   /v1/candidates/register:

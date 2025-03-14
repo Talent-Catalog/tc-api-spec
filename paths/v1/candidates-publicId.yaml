@@ -20,6 +20,8 @@ get:
         application/json:
           schema:
             $ref: ../../components/schemas/v1/Candidate.yaml
+    '204':
+      description: No content - No candidates available for the requested page
     '400':
       description: Bad request - Invalid candidate ID
       content:
