@@ -75,13 +75,13 @@ To generate and publish the artefact on Maven Central, run the following command
 
 ```bash
 ./gradlew clean openApiGenerate
-./gradlew publishMavenPublicationToMavenCentral
+./gradlew publish
 ```
 
 This compiles the generated code and packages it into a JAR that includes the API models and 
 controllers and publishes it to Sonatype (Maven Central) for verification.
 
-If you are iterating locally on spec changes, do not publishMavenPublicationToMavenCentral. Instead,
+If you are iterating locally on spec changes, do not `publish`. Instead,
 you should use:
 
 ```bash
