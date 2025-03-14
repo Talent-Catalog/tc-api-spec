@@ -53,54 +53,50 @@ documentation.
 
 ## Publishing the API as an Artefact to Maven Central
 
-Developers working on the API specification are expected to publish the generated code as a Maven 
-artefact. Follow these steps to publish to Maven Central:
+Our CI process means developers do not need to manually generate and publish API artefact. You only
+need to update the version in build.gradle, which will be picked up by the the GitHub Actions 
+workflow. The `publish` Git Action automatically publishes the artefact as part of the CI pipeline. 
+The only manual step required is the final promotion of the artefact to Maven Central via Sonatype. 
+This will be actioned by a core TC team member.
 
-### 1. Prepare Your Environment
 
-- **Sonatype account and artefact signing:** To publish artifacts to Maven Central, please contact 
-  a TC core team member to obtain the necessary Sonatype and GPG credentials for the Talent Catalog 
-  group ID (`org.tctalent`).
-
-### 2. Set the Project Version
+### Setting the Project Version
 
 - For **stable releases**, update the version in `build.gradle` to a non-SNAPSHOT version (e.g., 
   `1.0.1`).
 - For **ongoing development**, you may use a SNAPSHOT version (e.g., `1.0.2-SNAPSHOT`), which should 
   be published to Maven locally for iterative development.
 
-### 3. Generate and Package the Artifact
+### Generate and Package the Artefact
 
-To generate and publish the artefact on Maven Central, run the following commands:
+The CI workflow is configured to automatically run the necessary tasks when you merge a PR. This 
+process includes:
+
+- Running the openApiGenerate task to generate code from the API specification.
+- Publishing the artefact via the publish task to Sonatype.
+
+- If you are iterating locally on spec changes and do not require a full publication, use:
 
 ```bash
 ./gradlew clean openApiGenerate
-./gradlew publish
-```
-
-This compiles the generated code and packages it into a JAR that includes the API models and 
-controllers and publishes it to Sonatype (Maven Central) for verification.
-
-If you are iterating locally on spec changes, do not `publish`. Instead,
-you should use:
-
-```bash
 ./gradlew publishToMavenLocal
 ```
 
-This will publish the artifact to your local Maven repository, allowing the service project to pick 
-up changes quickly.
+This compiles the generated code and packages it into a JAR that includes the API models and 
+controllers, and publishes the artefact to your local Maven repository, allowing the service project 
+to pick up changes quickly.
 
-### 4. Promote the Artefact to Maven Central
+### Promote the Artefact to Maven Central
 
-After uploading the API artifact to Sonatype, you must log in to the 
-[Maven Central Repository Manager](https://central.sonatype.com/) using your Sonatype account. From 
-there, you will need to:
+After an API artefact is deployed to Sonatype by the CI workflow, a TC core team member must log in 
+to the[Maven Central Repository Manager](https://central.sonatype.com/) using our Sonatype account. 
+From there, you will need to:
 
-- **Review the artefact deployment:** Verify that your artifact has been correctly uploaded and 
+- **Review the artefact deployment:** Check that the artefact has been correctly uploaded and 
   verified.
 - **Publish the artefact to Maven Central:** Once everything is approved, publish the artefact to 
   promote it to Maven Central.
 
 *Note:* This manual promotion to Maven Central may be automated in future updates to the CI/CID 
-pipeline.
+pipeline. It is intentionally configured this way for now to prevent accidental publishing of 
+artefacts to Maven Central since they can not be deleted once published.
