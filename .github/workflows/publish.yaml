@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - staging  # Triggers on any push to staging (i.e. after a PR merge)
-      - 57-gitaction-to-auto-publish-maven-artefacts # Just for testing
+
   workflow_dispatch: # Allow manual triggering from GitHub
 
 jobs:
