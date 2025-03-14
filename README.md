@@ -93,9 +93,9 @@ to the[Maven Central Repository Manager](https://central.sonatype.com/) using ou
 From there, you will need to:
 
 - **Review the artefact deployment:** Check that the artefact has been correctly uploaded and 
-  verified.
-- **Publish the artefact to Maven Central:** Once everything is approved, publish the artefact to 
-  promote it to Maven Central.
+  verified, [here](https://central.sonatype.com/publishing/deployments).
+- **Publish the artefact to Maven Central:** Once everything is approved, click `publish` to promote 
+  the artefact to Maven Central.
 
 *Note:* This manual promotion to Maven Central may be automated in future updates to the CI/CID 
 pipeline. It is intentionally configured this way for now to prevent accidental publishing of 
