@@ -131,9 +131,24 @@ publishing {
                 }
                 developers {
                     developer {
+                        id = 'camerojo'
+                        name = 'John Cameron'
+                        email = "john.cameron@talentcatalog.net"
+                    }
+                    developer {
                         id = 'sadatmalik'
                         name = 'Sadat Malik'
                         email = "sadat.malik@talentcatalog.net"
+                    }
+                    developer {
+                        id = 'cazcam'
+                        name = 'Caroline Cameron'
+                        email = "caroline.cameron@talentcatalog.net"
+                    }
+                    developer {
+                        id = 'EhsanEhrari'
+                        name = 'Ehsan Ehrari'
+                        email = "ehsan.ehrari@talentcatalog.net"
                     }
                 }
                 scm {
