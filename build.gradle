@@ -15,7 +15,7 @@ plugins {
 // todo we will publish to org.tctalent once the namespace has been setup and verified on Maven central
 //group = 'org.tctalent'
 group = 'io.github.sadatmalik'
-version = '1.0.2'
+version = '1.0.5'
 
 // Java toolchain configuration
 java {
@@ -131,9 +131,24 @@ publishing {
                 }
                 developers {
                     developer {
+                        id = 'camerojo'
+                        name = 'John Cameron'
+                        email = "john.cameron@talentcatalog.net"
+                    }
+                    developer {
                         id = 'sadatmalik'
                         name = 'Sadat Malik'
                         email = "sadat.malik@talentcatalog.net"
+                    }
+                    developer {
+                        id = 'cazcam'
+                        name = 'Caroline Cameron'
+                        email = "caroline.cameron@talentcatalog.net"
+                    }
+                    developer {
+                        id = 'EhsanEhrari'
+                        name = 'Ehsan Ehrari'
+                        email = "ehsan.ehrari@talentcatalog.net"
                     }
                 }
                 scm {
