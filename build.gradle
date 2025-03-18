@@ -15,7 +15,7 @@ plugins {
 // todo we will publish to org.tctalent once the namespace has been setup and verified on Maven central
 //group = 'org.tctalent'
 group = 'io.github.sadatmalik'
-version = '1.0.5'
+version = '1.0.2'
 
 // Java toolchain configuration
 java {
