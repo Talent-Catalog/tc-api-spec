@@ -20,7 +20,3 @@ properties:
     format: int64
     description: The year the exam was taken.
     example: 2024
-  notes:
-    type: string
-    description: Any notes about the exam.
-    example: "Candidate was very nervous during the exam."

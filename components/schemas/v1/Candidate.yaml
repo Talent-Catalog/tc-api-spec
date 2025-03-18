@@ -21,10 +21,6 @@ allOf:
         description: Indicates whether the candidate has been arrested or imprisoned.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-      arrestImprisonNotes:
-        type: string
-        description: Notes related to the candidate's arrest or imprisonment.
-        example: "Arrest or imprisonment notes"
       availDate:
         type: string
         format: date
@@ -44,10 +40,6 @@ allOf:
         description: Reason for the candidate's immediate availability.
         allOf:
           - $ref: ../common/enums/avail_immediate_reason.yaml
-      availImmediateNotes:
-        type: string
-        description: Notes related to the candidate's immediate availability.
-        example: "Immediate availability notes"
       birthCountry:
         description: Country of birth
         allOf:
@@ -57,9 +49,6 @@ allOf:
         description: List of dependants related to the candidate.
         items:
           $ref: ./Dependant.yaml
-      candidateMessage:
-        type: string
-        description: Message sent to candidate relating to their current status.
       candidateVisaChecks:
         type: array
         description: List of visa checks related to the candidate.
@@ -74,10 +63,6 @@ allOf:
         allOf:
           - $ref: ../common/enums/yes_no.yaml
         example: "NO"
-      conflictNotes:
-        type: string
-        description: Notes related to the candidate's conflict participation.
-        example: "Conflict participation notes"
       covidVaccinated:
         description: Vaccination status of the candidate.
         allOf:
@@ -91,10 +76,6 @@ allOf:
         type: string
         description: Name of the COVID-19 vaccine received by the candidate.
         example: "Pfizer-BioNTech"
-      covidVaccineNotes:
-        type: string
-        description: Notes related to the candidate's COVID-19 vaccination.
-        example: "COVID-19 vaccination notes"
       covidVaccinatedStatus:
         description: COVID-19 vaccination status of the candidate.
         allOf:
@@ -104,19 +85,11 @@ allOf:
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
         example: "NO"
-      crimeConvictNotes:
-        type: string
-        description: Notes related to the candidate's criminal conviction.
-        example: "Criminal conviction notes"
       destLimit:
         description: Destination limits for the candidate.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
         example: "NO"
-      destLimitNotes:
-        type: string
-        description: Notes related to the candidate's destination limits.
-        example: "Destination limit notes"
       drivingLicense:
         description: Indicates the status of the candidate's driving license.
         allOf:
@@ -130,10 +103,6 @@ allOf:
         format: date
         description: Expiry date of the candidate's driving license.
         example: "2025-12-31"
-      englishAssessment:
-        type: string
-        description: Brief English assessment of the candidate.
-        example: "English assessment"
       englishAssessmentScoreIelts:
         type: string
         description: IELTS score of the candidate's English assessment.
@@ -142,14 +111,6 @@ allOf:
         description: Indicates whether the candidate is moving with their family.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-      familyMoveNotes:
-        type: string
-        description: Notes related to the candidate's move with their family.
-        example: "Family move notes"
-      frenchAssessment:
-        type: string
-        description: Brief French assessment of the candidate.
-        example: "French assessment"
       frenchAssessmentScoreNclc:
         type: integer
         format: int64
@@ -165,10 +126,6 @@ allOf:
         allOf:
           - $ref: ../common/enums/yes_no.yaml
         example: "NO"
-      healthIssuesNotes:
-        type: string
-        description: Notes related to the candidate's health issues.
-        example: "Health issues notes"
       homeLocation:
         type: string
         description: Home location of the candidate before they became a refugee.
@@ -181,18 +138,10 @@ allOf:
         description: Indicates if the candidate entered the host country legally.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-      hostEntryLegallyNotes:
-        type: string
-        description: Notes related to the candidate's legal entry in the host country.
-        example: "Legal entry notes"
       hostEntryYear:
         type: integer
         description: Year the candidate entered the host country.
         example: 2010
-      hostEntryYearNotes:
-        type: string
-        description: Notes related to the candidate's entry year in the host country.
-        example: "Entry year notes"
       ieltsScore:
         type: number
         format: float
@@ -203,22 +152,10 @@ allOf:
         description: Reasons for the candidate's international recruitment.
         items:
           $ref: ../common/enums/int_recruit_reason.yaml
-      intRecruitOther:
-        type: string
-        description: Other reasons for the candidate's international recruitment.
-        example: "Other reasons for international recruitment"
       intRecruitRural:
         description: Indicates whether the candidate will work in a rural area.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-      intRecruitRuralNotes:
-        type: string
-        description: Notes related to the candidate's rural area work preference.
-        example: "Rural work preference notes"
-      leftHomeNotes:
-        type: string
-        description: Notes related to the candidate leaving home.
-        example: "Leaving home notes"
       leftHomeReasons:
         type: array
         description: Reasons for the candidate leaving home.
@@ -228,10 +165,6 @@ allOf:
         description: Marital status of the candidate.
         allOf:
           - $ref: ../common/enums/marital_status.yaml
-      maritalStatusNotes:
-        type: string
-        description: Notes related to the candidate's marital status.
-        example: "Marital status notes"
       mediaWillingness:
         type: string
         description: Indicates the candidate's willingness to participate in media activities
@@ -259,10 +192,6 @@ allOf:
         format: date
         description: End date of the candidate's military service.
         example: "2015-01-01"
-      militaryNotes:
-        type: string
-        description: Notes related to the candidate's military service.
-        example: "Military service notes"
       miniIntakeCompletedDate:
         type: string
         format: date-time
@@ -326,23 +255,11 @@ allOf:
         description: Residence status of the candidate.
         allOf:
           - $ref: ../common/enums/residence_status.yaml
-      residenceStatusNotes:
-        type: string
-        description: Notes related to the candidate's residence status.
-        example: "Residence status notes"
       returnedHome:
         description: Indicates whether the candidate has returned home.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
         example: "NO"
-      returnedHomeReason:
-        type: string
-        description: Reason for the candidate's return home.
-        example: "Family reasons"
-      returnedHomeReasonNo:
-        type: string
-        description: Reason for the candidate not returning home.
-        example: "Because of the war"
       returnHomeSafe:
         description: Indicates whether the candidate returned home safely.
         allOf:
@@ -356,18 +273,10 @@ allOf:
         description: Indicates whether the candidate has ever applied for resettlement or emigration to a 3rd country.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-      resettleThirdStatus:
-        type: string
-        description: Status of the candidate's plan to resettle in a third country.
-        example: "Resettlement status"
       status:
         description: Status of the candidate.
         allOf:
           - $ref: ../common/enums/candidate_status.yaml
-      unhcrNotes:
-        type: string
-        description: Notes related to the candidate's UNHCR registration.
-        example: "UNHCR registration notes"
       unhcrNotRegStatus:
         description: UNHCR not registered status of the candidate.
         allOf:
@@ -380,10 +289,6 @@ allOf:
         description: UNHCR status of the candidate.
         allOf:
           - $ref: ../common/enums/unhcr_status.yaml
-      unrwaNotes:
-        type: string
-        description: Notes related to the candidate's UNRWA registration.
-        example: "UNRWA registration notes"
       unrwaNotRegStatus:
         description: UNRWA not registered status of the candidate.
         allOf:
@@ -398,27 +303,15 @@ allOf:
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
         example: "NO"
-      visaIssuesNotes:
-        type: string
-        description: Notes related to the candidate's visa issues.
-        example: "Visa issues notes"
       visaReject:
         description: Indicates whether the candidate has had a visa application rejected.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
         example: "NO"
-      visaRejectNotes:
-        type: string
-        description: Notes related to the candidate's visa application rejection.
-        example: "Visa rejection notes"
       workAbroad:
         description: Indicates whether the candidate has worked abroad.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-      workAbroadNotes:
-        type: string
-        description: Notes related to the candidate's work abroad.
-        example: "Work abroad notes"
       workPermit:
         description: Indicates whether the candidate has a work permit and if it is in the desired field.
         allOf:
@@ -427,10 +320,7 @@ allOf:
         description: Indicates whether the candidate desires a work permit.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-      workPermitDesiredNotes:
-        type: string
-        description: Notes related to the candidate's desire for a work permit.
-        example: "Work permit desire notes"
+
       yearOfArrival:
         type: integer
         format: int32

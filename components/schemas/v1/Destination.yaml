@@ -10,7 +10,3 @@ properties:
     description: The candidate's interest in the destination.
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
-  notes:
-    type: string
-    description: Any notes the candidate has about the destination.
-    example: "I have family in the UK."
