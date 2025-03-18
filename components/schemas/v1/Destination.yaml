@@ -3,8 +3,8 @@ description: A destination that a candidate is interested in.
 properties:
   country:
     description: The country of the destination.
-    $ref: ./Country.yaml
-    example: "United Kingdon"
+    allOf:
+      - $ref: ./Country.yaml
   interest:
     type: string
     description: The candidate's interest in the destination.

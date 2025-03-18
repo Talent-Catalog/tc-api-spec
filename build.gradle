@@ -1,0 +1,171 @@
+import io. github. zenhelix. gradle. plugin. extension. PublishingType
+
+// Gradle plugins required for the build
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.openapi.generator' version '7.8.0'
+    id 'maven-publish'
+    id 'signing'
+    id("io.github.zenhelix.maven-central-publish") version "0.5.0"
+}
+
+// Project metadata: Group and version details
+// todo we will publish to org.tctalent once the namespace has been setup and verified on Maven central
+//group = 'org.tctalent'
+group = 'io.github.sadatmalik'
+version = '1.0.5'
+
+// Java toolchain configuration
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+// Dependency configurations: Manage custom configurations
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+// Repositories: Define where dependencies should be resolved from
+repositories {
+    mavenCentral()
+}
+
+// Project-wide variables: Manage dependency versions
+ext {
+    lombokMapstructBindingVersion = "0.2.0"
+}
+
+// Project dependencies
+dependencies {
+    // Spring Boot starters
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
+    // Lombok
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+
+    // For OpenAPI 3.0 code generation - todo check if their are curated versions, if not move versions to ext
+    implementation "io.swagger.core.v3:swagger-annotations:2.2.8"
+    implementation "io.swagger.core.v3:swagger-models:2.2.8"
+    implementation "jakarta.validation:jakarta.validation-api:3.0.2"
+
+}
+
+// OpenAPI generation task: Generate API and model classes from the OpenAPI spec
+openApiGenerate {
+    generatorName.set("spring")
+    inputSpec.set(file("${projectDir}/openapi.yaml").absolutePath)
+    outputDir.set("$buildDir/generated")
+    apiPackage.set("org.tctalent.anonymization.api")
+    modelPackage.set("org.tctalent.anonymization.model")
+    configOptions.put("dateLibrary", "java8")
+    configOptions.put("openApiNullable", "false")
+    configOptions.put("useJakartaEe", "true")
+    configOptions.put("useLombokAnnotations", "true")
+    configOptions.put("additionalModelTypeAnnotations", "@lombok.Getter @lombok.Setter")
+    configOptions.put("generateBuilders", "true")
+    library.set("spring-boot")
+    globalProperties.set([
+            modelDocs: "false",
+            apiDocs: "false",
+            apiTests: "false",
+            modelTests: "false",
+            generateAliasAsModel: "true"
+    ])
+    // Pick up custom templates - e.g. for custom enum code generation:
+    templateDir.set(file("${projectDir}/custom-templates/JavaSpring").absolutePath)
+}
+
+// Clean-up task: Remove unnecessary generated files
+tasks.named("openApiGenerate").configure {
+    doLast {
+        def generatedMainClass = file("$buildDir/generated/src/main/java/org/openapitools/OpenApiGeneratorApplication.java")
+        if (generatedMainClass.exists()) {
+            generatedMainClass.delete()
+        }
+    }
+}
+
+// Include generated sources in the main source set
+sourceSets {
+    main {
+        java {
+            srcDir "$buildDir/generated/src/main/java"
+        }
+    }
+}
+
+publishing {
+    repositories {
+        mavenCentralPortal {
+            credentials {
+                username = System.getenv("SONATYPE_USERNAME") ?: ""
+                password = System.getenv("SONATYPE_PASSWORD") ?: ""
+            }
+            publishingType = PublishingType.USER_MANAGED
+            baseUrl = "https://central.sonatype.com"
+        }
+    }
+
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group.toString()
+            artifactId = project.name
+            version = project.version.toString()
+            from(components["java"])
+            pom {
+                name = 'tc-api-spec'
+                description = 'OpenAPI generated models and API for TC services'
+                url = 'https://github.com/Talent-Catalog/tc-api-spec.git'
+                inceptionYear = '2024'
+                licenses {
+                    license {
+                        name = 'GNU Affero General Public License, Version 3'
+                        url = 'https://www.gnu.org/licenses/agpl-3.0.html#license-text'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'camerojo'
+                        name = 'John Cameron'
+                        email = "john.cameron@talentcatalog.net"
+                    }
+                    developer {
+                        id = 'sadatmalik'
+                        name = 'Sadat Malik'
+                        email = "sadat.malik@talentcatalog.net"
+                    }
+                    developer {
+                        id = 'cazcam'
+                        name = 'Caroline Cameron'
+                        email = "caroline.cameron@talentcatalog.net"
+                    }
+                    developer {
+                        id = 'EhsanEhrari'
+                        name = 'Ehsan Ehrari'
+                        email = "ehsan.ehrari@talentcatalog.net"
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/Talent-Catalog/tc-api-spec.git'
+                    developerConnection = 'scm:git:ssh://github.com/Talent-Catalog/tc-api-spec.git'
+                    url = 'https://github.com/Talent-Catalog/tc-api-spec.git'
+                }
+            }
+        }
+    }
+}
+
+def signingKeyId = System.getenv("GPG_SIGNING_KEY_ID") ?: project.findProperty("signing.keyId")
+def signingKey = System.getenv("GPG_SECRET_KEY") ?: project.findProperty("signing.secretKey")
+def signingPassword = System.getenv("GPG_SIGNING_PASSWORD") ?: project.findProperty("signing.password")
+
+signing {
+    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+    sign(publishing.publications)
+}

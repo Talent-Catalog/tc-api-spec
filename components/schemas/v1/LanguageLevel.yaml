@@ -12,6 +12,6 @@ properties:
     example: "Full Professional Proficiency"
   cefr_level:
     type: string
-    description: The CEFR level of the language proficiency.
+    description: The CEFR code for the language proficiency level.
     allOf:
       - $ref: ../common/enums/cefr_levels.yaml

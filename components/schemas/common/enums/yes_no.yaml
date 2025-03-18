@@ -7,4 +7,4 @@ x-enum-varnames:
   - "NO_RESPONSE"
   - "YES"
   - "NO"
-example: "Yes"
+example: "YES"

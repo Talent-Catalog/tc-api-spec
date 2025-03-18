@@ -28,7 +28,7 @@ properties:
       $ref: ./CandidateExam.yaml
   candidateLanguages:
     type: array
-    description: List of languages spoken by the candidate.
+    description: List of languages that the candidate is proficient in.
     items:
       $ref: ./CandidateLanguage.yaml
   candidateMessage:

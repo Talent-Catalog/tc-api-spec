@@ -126,6 +126,14 @@ allOf:
         allOf:
           - $ref: ../common/enums/yes_no.yaml
         example: "No"
+      homeLocation:
+        type: string
+        description: Home location of the candidate before they became a refugee.
+        example: "Damascus"
+      hostChallenges:
+        type: string
+        description: Challenges faced by the candidate in the host country.
+        example: "Host country challenges"
       hostEntryLegally:
         description: Indicates if the candidate entered the host country legally.
         allOf:
@@ -173,7 +181,7 @@ allOf:
         description: Indicates whether the candidate is wanted for military service.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       militaryStart:
         type: string
         format: date
@@ -213,7 +221,7 @@ allOf:
         items:
           type: integer
           format: int64
-        example: "1"
+        example: [1,2]
       partnerEduLevel:
         description: Education level of the candidate's partner.
         allOf:
@@ -260,7 +268,7 @@ allOf:
         description: Indicates whether the candidate plans to return home in the future.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       resettleThird:
         description: Indicates whether the candidate has ever applied for resettlement or emigration to a 3rd country.
         allOf:
@@ -289,7 +297,7 @@ allOf:
         description: Indicates whether the candidate is registered with UNRWA.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       visaIssues:
         description: Indicates whether the candidate has had visa issues.
         allOf:
@@ -329,4 +337,4 @@ allOf:
           - $ref: ../common/iso_timestamp.yaml
 
     required:
-      - id
+      - publicId
