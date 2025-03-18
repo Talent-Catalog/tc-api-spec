@@ -62,7 +62,7 @@ allOf:
         description: Indicates whether the candidate has participated in a conflict.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-        example: "No"
+        example: "NO"
       covidVaccinated:
         description: Vaccination status of the candidate.
         allOf:
@@ -84,12 +84,12 @@ allOf:
         description: Indicates whether the candidate has a criminal conviction.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       destLimit:
         description: Destination limits for the candidate.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-        example: "No"
+        example: "NO"
       drivingLicense:
         description: Indicates the status of the candidate's driving license.
         allOf:
@@ -125,7 +125,7 @@ allOf:
         description: Indicates whether the candidate has health issues.
         allOf:
           - $ref: ../common/enums/yes_no.yaml
-        example: "No"
+        example: "NO"
       homeLocation:
         type: string
         description: Home location of the candidate before they became a refugee.
@@ -259,7 +259,7 @@ allOf:
         description: Indicates whether the candidate has returned home.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       returnHomeSafe:
         description: Indicates whether the candidate returned home safely.
         allOf:
@@ -302,12 +302,12 @@ allOf:
         description: Indicates whether the candidate has had visa issues.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       visaReject:
         description: Indicates whether the candidate has had a visa application rejected.
         allOf:
           - $ref: ../common/enums/yes_no_unsure.yaml
-        example: "No"
+        example: "NO"
       workAbroad:
         description: Indicates whether the candidate has worked abroad.
         allOf:
