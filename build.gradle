@@ -164,7 +164,12 @@ publishing {
 def signingKeyId = System.getenv("GPG_SIGNING_KEY_ID") ?: project.findProperty("signing.keyId")
 def signingKey = System.getenv("GPG_SECRET_KEY") ?: project.findProperty("signing.secretKey")
 def signingPassword = System.getenv("GPG_SIGNING_PASSWORD") ?: project.findProperty("signing.password")
-
+// Check if the GPG_SECRET_KEY environment variable is a file path
+if (signingKey && new File(signingKey).exists()) {
+    // It's a file path, so read the file content into signingKey
+    def file = new File(signingKey)
+    signingKey = file.text  // Read the file content into the signingKey variable
+}
 signing {
     useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
     sign(publishing.publications)
