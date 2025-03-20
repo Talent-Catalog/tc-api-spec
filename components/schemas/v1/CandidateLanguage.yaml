@@ -13,7 +13,3 @@ properties:
     description: The candidate's spoken proficiency in this language.
     allOf:
       - $ref: ./LanguageLevel.yaml
-  migrationLanguage:
-    type: string
-    description: The migration language for this candidate.
-    example: "Urdu"
