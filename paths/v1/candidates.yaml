@@ -43,6 +43,13 @@ get:
       schema:
         type: string
         example: "1234,5678"
+    - name: includeEmployed
+      in: query
+      description: Flag to include candidate profiles with an "employed" status in the results. Defaults to false.
+      required: false
+      schema:
+        type: boolean
+        default: false
   responses:
     '200':
       description: A page of anonymised candidates
