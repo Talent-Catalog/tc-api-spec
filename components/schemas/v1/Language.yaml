@@ -11,4 +11,5 @@ properties:
   status:
     type: string
     description: The status of the language.
-    example: "Active"
+    allOf:
+      - $ref: ../common/enums/status.yaml
