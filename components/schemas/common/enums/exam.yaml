@@ -9,6 +9,7 @@ enum:
   - "IELTS_ACA"
   - "TOEFL"
   - "OTHER"
+  - "DET_OFFICIAL"
 x-enum-varnames:
   - "NO_RESPONSE"
   - "OET"
@@ -19,4 +20,5 @@ x-enum-varnames:
   - "IELTS_ACA"
   - "TOEFL"
   - "OTHER"
+  - "DET_OFFICIAL"
 example: "IELTS_GEN"
