@@ -37,11 +37,6 @@ post:
                 format: base64-uuid
                 description: The unique public ID assigned to the registered candidate
                 example: "ABcd2EFgHIjkLMNOp3QR-S"
-              registrationId:
-                type: string
-                format: base64-uuid
-                description: The unique registration ID for tracking the candidate's registration
-                example: "ABcd2EFgHIjkLMNOp3QR-S"
     '400':
       description: Bad request - Invalid request payload
       content:
