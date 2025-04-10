@@ -35,5 +35,5 @@ properties:
     example: 3
   employerHiredInternationally:
     type: string
-    description: Whether the employer has hired internationally.
+    description: Whether the employer had hired internationally prior to this opportunity.
     example: Yes
