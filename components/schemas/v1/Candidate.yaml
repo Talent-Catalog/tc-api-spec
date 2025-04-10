@@ -169,10 +169,6 @@ allOf:
         type: string
         description: Indicates the candidate's willingness to participate in media activities
         example: "Yes"
-      migrationEducationMajor:
-        description: Major of the candidate's education in the migration country.
-        allOf:
-          - $ref: ./EducationMajor.yaml
       militaryService:
         description: Indicates whether the candidate has served in the military.
         allOf:
