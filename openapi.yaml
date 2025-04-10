@@ -44,9 +44,9 @@ tags:
     description: Operations related to anonymised candidates.
 
 servers:
-  - url: https://tctalent.org/ads
+  - url: https://api.tctalent.org
     description: Production server
-  - url: https://tctalent-test.org/ads
+  - url: https://test.api.tctalent.org
     description: Staging server
 
 paths:
