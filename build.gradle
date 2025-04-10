@@ -88,6 +88,10 @@ tasks.named("openApiGenerate").configure {
         if (generatedMainClass.exists()) {
             generatedMainClass.delete()
         }
+        def generatedV1ApiController = file("$buildDir/generated/src/main/java/org/tctalent/anonymization/api/V1ApiController.java")
+        if (generatedV1ApiController.exists()) {
+            generatedV1ApiController.delete()
+        }
     }
 }
 
