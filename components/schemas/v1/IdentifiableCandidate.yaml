@@ -37,6 +37,11 @@ allOf:
         description: The candidate's partner (if also a candidate in the system)
         allOf:
           - $ref: './IdentifiablePartner.yaml'
+      registeredByPublicId:
+        type: string
+        format: base64-uuid
+        description: Anonymised public ID of the partner who registered the candidate or null if the candidate registered themselves.
+        example: ABcd2EFgHIjkLMNOp3QR-S
       regoIp:
         type: string
         description: IP address of the candidate during registration.

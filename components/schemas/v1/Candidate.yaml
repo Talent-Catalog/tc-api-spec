@@ -247,11 +247,6 @@ allOf:
         description: Occupation of the candidate's partner.
         allOf:
           - $ref: ./Occupation.yaml
-      registeredByPublicId:
-        type: string
-        format: base64-uuid
-        description: Anonymised public ID of the partner who registered the candidate or null if the candidate registered themselves.
-        example: ABcd2EFgHIjkLMNOp3QR-S
       residenceStatus:
         description: Residence status of the candidate.
         allOf:
