@@ -44,10 +44,10 @@ tags:
     description: Operations related to anonymised candidates.
 
 servers:
-  - url: https://api.tctalent.org
-    description: Production server
   - url: https://test.api.tctalent.org
     description: Staging server
+  - url: https://api.tctalent.org
+    description: Production server
 
 paths:
   /v1/candidates:
