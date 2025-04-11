@@ -15,7 +15,7 @@ plugins {
 // todo we will publish to org.tctalent once the namespace has been setup and verified on Maven central
 //group = 'org.tctalent'
 group = 'io.github.sadatmalik'
-version = '1.0.10'
+version = '1.0.11'
 
 // Java toolchain configuration
 java {
@@ -87,6 +87,10 @@ tasks.named("openApiGenerate").configure {
         def generatedMainClass = file("$buildDir/generated/src/main/java/org/openapitools/OpenApiGeneratorApplication.java")
         if (generatedMainClass.exists()) {
             generatedMainClass.delete()
+        }
+        def generatedV1ApiController = file("$buildDir/generated/src/main/java/org/tctalent/anonymization/api/V1ApiController.java")
+        if (generatedV1ApiController.exists()) {
+            generatedV1ApiController.delete()
         }
     }
 }
