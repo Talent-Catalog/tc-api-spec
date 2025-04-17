@@ -72,10 +72,10 @@ properties:
     description: Nationality of the candidate.
     allOf:
       - $ref: ./Country.yaml
-  surveyType:
-    description: Survey type associated with the candidate.
+  howHeardAboutUs:
+    description: How the candidate heard about the Talent Catalog.
     allOf:
-      - $ref: ./SurveyType.yaml
+      - $ref: "../common/enums/how_heard_about_us.yaml"
   unhcrConsent:
     description: Indicates whether the candidate has given consent for UNHCR to be notified that they have registered on the Talent Catalog.
     allOf:
