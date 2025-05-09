@@ -1,3 +1,6 @@
+extends:
+  - recommended
+
 logo:
   image: ./assets/tc-logo-2.png
   altText: Talent Catalog logo
