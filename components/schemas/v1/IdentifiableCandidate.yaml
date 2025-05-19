@@ -146,7 +146,10 @@ allOf:
         type: string
         description: Link to the corresponding candidate's video profile.
         example: "https://drive.google.com/video/12345678"
-
+      surveyType:
+        description: Survey type associated with the candidate.
+        allOf:
+         - $ref: ./SurveyType.yaml
       # The below fields use the TC raw data field names but are mapped to public API field names
       # For example contactConsentPartners is mapped to contactConsentTcPartners in the public API model
       # These fields will eventually be renamed in the TC database and service to match the public API model
