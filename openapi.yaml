@@ -51,9 +51,11 @@ servers:
 
 paths:
   /v1/candidates:
-    $ref: paths/v1/candidates.yaml
+    $ref: ./paths/v1/candidates.yaml
   /v1/candidates/{publicId}:
     $ref: ./paths/v1/candidates-publicId.yaml
+  /v1/candidates/by-list/{publicListId}:
+    $ref: ./paths/v1/candidates-by-public-list-id.yaml
   /v1/candidates/job-match:
     $ref: ./paths/v1/candidates-job-match.yaml
   /v1/candidates/offer-to-assist:

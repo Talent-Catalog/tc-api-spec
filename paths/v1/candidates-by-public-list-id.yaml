@@ -1,0 +1,56 @@
+get:
+  summary: Retrieve a page of anonymised candidates in a saved list
+  description: Fetches a paginated array of anonymised candidates belonging to a specific saved list, 
+    identified by its public ID.
+  tags:
+    - Candidates
+  operationId: getCandidatesByPublicListId
+  parameters:
+    - name: publicListId
+      in: path
+      required: true
+      description: The public ID of the saved list
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page number for pagination
+      required: false
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+    - name: limit
+      in: query
+      description: The number of results per page
+      required: false
+      schema:
+        type: integer
+        default: 10
+        minimum: 1
+        maximum: 100
+  responses:
+    '200':
+      description: A page of anonymised candidates
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/CandidatePage.yaml
+    '400':
+      description: Bad request
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../../components/schemas/common/errors/BadRequestParamError.yaml
+    '401':
+      description: Unauthorised
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../../components/schemas/common/errors/UnauthorisedError.yaml
+    '500':
+      description: Internal server error
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../../components/schemas/common/errors/InternalServerError.yaml
