@@ -63,7 +63,7 @@ consistent and in line with GPL licensing and common open-source conventions.
 
 ## Standard tools
 
-See [the README for the standard tools we use for development](README.md).
+See [the README for the standard tools we use for development](https://github.com/Talent-Catalog/tc-api-spec/blob/staging/README.md).
 
 In particular, we use Intellij to edit, build and run code as well as using
 its Git and GitHub integration. Our standard Intellij configuration is 
@@ -105,7 +105,7 @@ everyone is a beginner at first.
 
 ## Test your changes locally
 
-See [the README for how to run locally](README.md).
+See [the README for how to run locally](https://github.com/Talent-Catalog/tc-api-spec/blob/staging/README.md).
 
 ## Get the style right
 
@@ -236,7 +236,7 @@ GitHub issue to provide the proper context for your PR.
 
 ## Shipping a release (maintainers only)
 
-See [the README for how to do a release](README.md).
+See [the README for how to do a release](https://github.com/Talent-Catalog/tc-api-spec/blob/staging/README.md).
 
 
 [new issue]: https://github.com/Talent-Catalog/tc-api-spec/issues/new
